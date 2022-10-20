@@ -1,0 +1,134 @@
+<section class="card shadow border-0">
+  <div class="card-header bg-white border-0">
+    Are You a Skylines Member? <span class="fw-bold">Login</span> so we can help you faster
+    <mat-divider class="my-3"></mat-divider>
+    <div class="row ">
+      <div class="col-12 col-lg-7">
+        <h4>Please make sure your name is entered exactly as it appearss on your governmaent issued ID</h4>
+      </div>
+      <div class="col-12 col-lg-5">
+        <h4 class="fw-bold text-start text-lg-end">All fileds required unless noted</h4>
+
+      </div>
+    </div>
+  </div>
+  <div class="card-body border-top-0">
+    <form [formGroup]="firstFormGroup">
+    
+      <div class="row row-cols-1">
+        <div class="col">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Airline Program (optional)</mat-label>
+                <mat-select formControlName="airlineProgram">
+                  <mat-option value="one">First </mat-option>
+                  <mat-option value="two">Second </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input matInput placeholder="Frequent Flyers (optional)" formControlName="frequentFlyers">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- second -->
+        <div class="col">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input matInput type="text" placeholder="First Name" formControlName="firstName">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input matInput type="text" placeholder="Middle Name (optional)"
+                  formControlName="middleName">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input matInput type="text" placeholder="Last Name" formControlName="lastName">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Phone Country / Regional code</mat-label>
+                <mat-select formControlName="countryCode">
+                  <mat-option *ngFor="let country of countries"
+                    value="{{country.name}}({{country.phonecode}})">{{country.name}}
+                    ({{country.phonecode}}) </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input matInput type="number" placeholder="Phone number" formControlName="phoneNumber">
+                <mat-error>Please enter a valid PhoneNumber</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input type="email" matInput placeholder="Email Address" formControlName="email">
+                <mat-error>Please enter a valid Email</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                  <mat-option *ngFor="let country of countries" [value]="country.name">
+                    {{ country.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input type="text" matInput placeholder="Address Line 1" formControlName="address1">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input type="text" matInput placeholder="Address Line 2 (optional)"
+                  formControlName="address2">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>State / Province</mat-label>
+                <mat-select formControlName="state">
+                  <mat-option *ngFor="let state of states" [value]="state.name">
+                    {{ state.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <mat-label>City</mat-label>
+                <mat-select formControlName="city">
+                  <mat-option *ngFor="let city of cities" [value]="city.name">
+                    {{ city.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="fill">
+                <input type="number" matInput placeholder="Postal Code" formControlName="postalCode">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperNext class="d-block ms-auto mat-next-button px-4 py-2" (click)="sendFormData()">Continue to
+          Comment</button>
+      </div>
+    </form>
+  </div>
+</section>

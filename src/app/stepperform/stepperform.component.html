@@ -1,0 +1,85 @@
+<!-- Button trigger modal -->
+<button type="button" [hidden]="true" class="btn btn-primary" id="Modalopen" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h1 class="modal-title text-white" id="exampleModalLabel">Give Feedback or File Compliant</h1>
+                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <section ngSwitch="{{stepper.selectedIndex}}">
+                    <div *ngSwitchCase="0" class="mx-5">
+                        <h1>Personal Information </h1>
+                        <h3>Please provide Your contact information</h3>
+                    </div>
+                    <div *ngSwitchCase="1" class="mx-5">
+                        <h1>Leave Your Comment</h1>
+                        <h3>Please provide as much detail as you can</h3>
+                    </div>
+                    <div *ngSwitchCase="2" class="mx-5">
+                        <h1>Review your Information</h1>
+                        <h3>Please confirm the information below is correct</h3>
+                    </div>
+                    <div *ngSwitchCase="3" class="mx-5">
+                        <h1>Confirmation</h1>
+                        <h3>Your comments have been submitted</h3>
+                    </div>
+                </section>
+
+                <mat-stepper #stepper labelPosition="bottom">
+                    <!-- step-1 -->
+                    <mat-step [stepControl]="step1.firstFormGroup">
+                        <ng-template matStepLabel>Personal info</ng-template>
+                        <app-form1 #step1></app-form1>
+                    </mat-step>
+                    <!-- step-2 -->
+                    <mat-step [stepControl]="step2.secondFormGroup">
+                        <ng-template matStepLabel>comment</ng-template>
+                        <app-form2 #step2></app-form2>
+                    </mat-step>
+                    <!-- step-3 -->
+                    <mat-step>
+                        <ng-template matStepLabel>Review</ng-template>
+                        <app-review></app-review>
+                    </mat-step>
+                    <!-- step-4 -->
+                    <mat-step>
+                        <ng-template matStepLabel>Done</ng-template>
+                        <div class="row">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="col-12 col-lg-9">
+                                    <div class="card border-0 shadow py-5 px-lg-3">
+                                        <div class="card-body">
+                                            <div>
+                                                <p class="display-5"><span>Thank you for your</span> <span
+                                                        class="d-lg-block w-lg-25" style="border-bottom:3px solid red;">
+                                                        Feedback</span> </p>
+                                            </div>
+                                            <div>
+                                                <p class="lead lh-lg">If you requested a reply, you will recieve an
+                                                    acknowledgement email with
+                                                    your
+                                                    case number and other important information.We apperciate your
+                                                    feedback, and thank you for
+                                                    flying
+                                                    Delta
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </mat-step>
+
+                </mat-stepper>
+            </div>
+        </div>
+    </div>
+</div>

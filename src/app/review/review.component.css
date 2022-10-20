@@ -1,0 +1,15 @@
+.mat-next-button {
+    background-color: #DE3163;
+    color: white;
+
+}
+
+.mat-previous-button {
+    border: 3px solid #081649;
+}
+
+a {
+    text-decoration: none;
+    color: blue !important;
+    font-weight: bold;
+}

@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
+    z-index: 10000 !important;
+}
+
+.mat-select-arrow {
+    border: solid red !important;
+    border-width: 0 3px 3px 0 !important;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+}
+
+@media only screen and (min-width: 1000px) {
+    .modal-body {
+        position: relative !important;
+    }
+
+    .mat-horizontal-stepper-header-container {
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.mat-next-button {
+    background-color: #DE3163;
+    color: white;
+
+}
+
+.mat-previous-button {
+    border: 3px solid #081649;
+}
+
+mat-error {
+    font-size: 0.8rem;
+}
