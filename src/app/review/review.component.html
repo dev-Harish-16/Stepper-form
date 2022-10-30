@@ -28,24 +28,24 @@
                     </div>
                     <div class="col">
                         <div>
-                            <h4 class="review-data">{{firstFormGroup.firstName}}</h4>
+                            <h4 class="review-data">{{firstFormGroup.value?.firstName}}</h4>
                             <div>
                                 <h4 class="review-title fw-bold">Contact Information</h4>
-                                <h4>{{firstFormGroup.phoneNumber}}</h4>
-                                <h4>{{firstFormGroup.email}}</h4>
+                                <h4>{{firstFormGroup.value?.phoneNumber}}</h4>
+                                <h4>{{firstFormGroup.value?.email}}</h4>
                             </div>
                             <div>
                                 <h4 class="review-title fw-bold">Address</h4>
-                                <h4>{{firstFormGroup.address1}}</h4>
-                                <h4>{{firstFormGroup.state}}</h4>
-                                <h4>{{firstFormGroup.country}}</h4>
+                                <h4>{{firstFormGroup.value?.address1}}</h4>
+                                <h4>{{firstFormGroup.value?.state}}</h4>
+                                <h4>{{firstFormGroup.value?.country}}</h4>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div>
                             <h4 class="fw-bold">Airline Program </h4>
-                            <h4>{{firstFormGroup.airlineProgram}}</h4>
+                            <h4>{{firstFormGroup.value?.airlineProgram}}</h4>
                         </div>
                     </div>
                 </div>
@@ -64,44 +64,44 @@
                             <div>
                                 <div>
                                     <h4 class="review-title fw-bold">Flight Information</h4>
-                                    <h4>{{secondFormGroup.dateOfFlight |
+                                    <h4>{{secondFormGroup.value?.dateOfFlight |
                                         date:'shortDate'}}</h4>
                                 </div>
                                 <div>
-                                    <h4>{{secondFormGroup.origin}} to
-                                        {{secondFormGroup.destination}}</h4>
-                                    <h4>{{secondFormGroup.flightName | titlecase }}</h4>
+                                    <h4>{{secondFormGroup.value?.origin}} to
+                                        {{secondFormGroup.value?.destination}}</h4>
+                                    <h4>{{secondFormGroup.value?.flightName | titlecase }}</h4>
                                     <h4 class="review-title fw-bold"> Flight Number </h4>
-                                    <h4>{{secondFormGroup.flightNumber}}</h4>
+                                    <h4>{{secondFormGroup.value?.flightNumber}}</h4>
                                 </div>
                                 <div>
                                     <h4 class="review-title fw-bold">Ticket Number</h4>
-                                    <h4>{{secondFormGroup.ticket}}</h4>
-                                    <h4 *ngIf="!secondFormGroup.ticket">-</h4>
+                                    <h4>{{secondFormGroup.value?.ticket}}</h4>
+                                    <h4 *ngIf="!secondFormGroup.value?.ticket">-</h4>
                                 </div>
                                 <div>
                                     <h4 class="review-title fw-bold">Would Like a reply?</h4>
-                                    <h4>{{secondFormGroup.reply}}</h4>
+                                    <h4>{{secondFormGroup.value?.reply}}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div>
                                 <h4 class="review-tile fw-bold">Comment</h4>
-                                <h4>{{secondFormGroup.textArea}}</h4>
+                                <h4>{{secondFormGroup.value?.textArea}}</h4>
                             </div>
                             <div>
-                                <h4 class="review-title fw-bold">Attachements</h4>
-
+                                <h4 class="review-title fw-bold">Attachments</h4>
+                                <h4>{{fileLength}} - attachments added</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div
-            class="d-flex flex-column flex-lg-row justify-content-center justify-content-md-end gap-1 gap-md-3 mt-3 ">
-            <button mat-button matStepperNext class=" mat-next-button px-4 py-2  " (click)="finalData()">Confirm and
+        <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-md-end gap-1 gap-md-3 mt-3 ">
+            <button mat-button matStepperNext class=" mat-next-button px-4 py-2  " (click)="confirmAndSubmit()">Confirm
+                and
                 submit</button>
             <button mat-button matStepperPrevious class=" mat-previous-button px-5 py-1 ">Back</button>
         </div>

@@ -1,0 +1,61 @@
+<div class="container-fluid py-5 h-100" style="background-color: grey;">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center h-100 px-2 ">
+            <div class="col-12 col-md-7 col-lg-7 col-xl-7  p-4 rounded ">
+                <div class="card rounded border-0 p-5">
+                    <form [formGroup]="signupForm" #ref="ngForm" (ngSubmit)="ref.valid && onSubmit()">
+                        <!-- username -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput id="username" formControlName="username"
+                                placeholder="Ex. John Doe">
+                            <mat-error *ngIf="!signupForm.value.username.valid && !signupForm.value.username.touched">
+                                Please enter a
+                                valid
+                                username!</mat-error>
+                        </mat-form-field>
+
+                        <div class="row">
+                            <!-- mobile number -->
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile Number</mat-label>
+                                    <input type="number" matInput id="mobile" formControlName="mobile">
+                                    <mat-error>Please enter a valid Mobile
+                                        Number!</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <!-- E-mail -->
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>E-mail</mat-label>
+                                    <input type="email" matInput id="email" formControlName="email"
+                                        placeholder="Ex. pat@example.com">
+                                    <mat-error>Please enter a valid
+                                        Email Address!</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" placeholder="Password" formControlName="password"
+                                [type]="hide ? 'password' : 'text'">
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+                            <mat-error *ngIf="password.hasError('minlength')">Password must have at least {{minPw}}
+                                characters
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- submit button -->
+                        <button mat-raised-button type="submit" color="primary">Signup</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

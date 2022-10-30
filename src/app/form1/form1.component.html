@@ -1,6 +1,7 @@
 <section class="card shadow border-0">
   <div class="card-header bg-white border-0">
-    Are You a Skylines Member? <span class="fw-bold">Login</span> so we can help you faster
+    Are You a Skylines Member? <a class="fw-bold text-decoration-none" routerLink="/login">Login</a> so we can help you
+    faster
     <mat-divider class="my-3"></mat-divider>
     <div class="row ">
       <div class="col-12 col-lg-7">
@@ -14,7 +15,6 @@
   </div>
   <div class="card-body border-top-0">
     <form [formGroup]="firstFormGroup">
-    
       <div class="row row-cols-1">
         <div class="col">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
@@ -22,8 +22,10 @@
               <mat-form-field appearance="fill">
                 <mat-label>Airline Program (optional)</mat-label>
                 <mat-select formControlName="airlineProgram">
-                  <mat-option value="one">First </mat-option>
-                  <mat-option value="two">Second </mat-option>
+                  <mat-option value="indigo">Indigo </mat-option>
+                  <mat-option value="jetairways">Jet airways </mat-option>
+                  <mat-option value="airAsia">Air asia</mat-option>
+                  <mat-option value="qatarAirways">Qatar Airways</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
@@ -44,8 +46,7 @@
             </div>
             <div class="col">
               <mat-form-field appearance="fill">
-                <input matInput type="text" placeholder="Middle Name (optional)"
-                  formControlName="middleName">
+                <input matInput type="text" placeholder="Middle Name (optional)" formControlName="middleName">
               </mat-form-field>
             </div>
             <div class="col">
@@ -57,8 +58,8 @@
               <mat-form-field appearance="fill">
                 <mat-label>Phone Country / Regional code</mat-label>
                 <mat-select formControlName="countryCode">
-                  <mat-option *ngFor="let country of countries"
-                    value="{{country.name}}({{country.phonecode}})">{{country.name}}
+                  <mat-option *ngFor="let country of countries" value="{{country.name}}({{country.phonecode}})">
+                    {{country.name}}
                     ({{country.phonecode}}) </mat-option>
                 </mat-select>
               </mat-form-field>
@@ -93,8 +94,7 @@
             </div>
             <div class="col">
               <mat-form-field appearance="fill">
-                <input type="text" matInput placeholder="Address Line 2 (optional)"
-                  formControlName="address2">
+                <input type="text" matInput placeholder="Address Line 2 (optional)" formControlName="address2">
               </mat-form-field>
             </div>
             <div class="col">
@@ -126,9 +126,12 @@
         </div>
       </div>
       <div>
-        <button mat-button matStepperNext class="d-block ms-auto mat-next-button px-4 py-2" (click)="sendFormData()">Continue to
+        <button mat-button matStepperNext class="d-block ms-auto mat-next-button px-4 py-2"
+          (click)="sendFormData()">Continue to
           Comment</button>
+
       </div>
     </form>
   </div>
+
 </section>

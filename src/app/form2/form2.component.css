@@ -15,6 +15,26 @@ input[type="file"] {
     opacity: 0;
 }
 
+.attach-file {
+    background-color: #081649;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.overflow-Content {
+    white-space: nowrap;
+    /* padding-left: 10%; */
+    width:70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.close-icon:hover {
+    cursor: pointer;
+    color: #DE3163;
+
+}
+
 .mat-next-button {
     background-color: #DE3163;
     color: white;

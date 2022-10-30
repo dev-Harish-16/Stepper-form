@@ -1,11 +1,5 @@
-
-import { NumberInput } from '@angular/cdk/coercion';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { MatStepper } from '@angular/material/stepper';
-import { BehaviorSubject } from 'rxjs';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-stepperform',
@@ -14,17 +8,23 @@ import { BehaviorSubject } from 'rxjs';
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: { displayDefaultIndicatorType: false, }
+      useValue: { displayDefaultIndicatorType: false }
 
     },
   ],
 })
-export class StepperformComponent implements OnInit {
+export class StepperformComponent implements OnInit, OnDestroy {
+
   constructor() {
   }
 
   ngOnInit() {
     document.getElementById('Modalopen')?.click()
+    
+  }
+
+  ngOnDestroy() {
+    document.getElementById('btn-close').click()
 
   }
 

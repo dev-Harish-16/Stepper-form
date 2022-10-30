@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
+import { Router } from '@angular/router';
 import { ICountry, IState, ICity } from 'country-state-city';
-import { CountryService } from '../country.service';
+import { FormService} from '../form.service';
 
 @Component({
   selector: 'app-form1',
@@ -17,11 +19,20 @@ export class Form1Component implements OnInit {
   public countryControls: AbstractControl
   public stateControls: AbstractControl
   public countryCodes: string
-  public countryIsoCode: { isoCode: string; }[]
-  public stateIsoCode: IState[];
+  public country: { isoCode: string; }[]
+  public state: IState[];
+  cityControls: AbstractControl;
 
-  constructor(private formBuilder: FormBuilder, private service: CountryService) {
+
+  constructor(private formBuilder: FormBuilder, private service: FormService, private router: Router) {
     this.firstForm();
+
+  }
+
+  ngOnInit(): void {
+    this.getAllCountry();
+    this.getState();
+    this.getCity();
 
   }
 
@@ -43,57 +54,69 @@ export class Form1Component implements OnInit {
       postalCode: ['', [Validators.required]]
 
     });
+
   }
+
   getAllCountry(): void {
     this.countries = this.service.getCountries();
     // console.log(this.countries);
 
   }
+
+  // ** when the CITY select field selected 
   getState(): void {
-    // ** abstract Controls **//
+
+    // ** abstract Controls 
     this.countryControls = this.firstFormGroup.controls['country'];
-    this.countryControls.valueChanges.subscribe((country: string) => {
-      // ** getting countryIsoCode by filtering
-      this.countryIsoCode = this.countries.filter((countyObj) => {
-        return countyObj.name === country
+    this.countryControls.valueChanges.subscribe((countryName: string) => {
+      // ** getting country - filtering by country-name
+      this.country = this.countries.filter((countyObj) => {
+        return countyObj.name === countryName
       })
-      console.log(this.countryIsoCode[0].isoCode);
-      if (country) {
-        //** getting State **//       
-        this.states = this.service.getStatesByCountry(this.countryIsoCode[0].isoCode);
-        console.log(this.states);
-      }
+      // console.log("individual country",this.country);
+      // console.log(this.country[0]);
+
+      //** getting State /       
+      this.states = this.service.getStatesByCountry(this.country[0].isoCode);
+      console.log("Total-state ", this.states);
+
     });
+
   }
+
+  // * when the STATE select field selected 
   getCity(): void {
     // ** abstract Controls **//
     this.stateControls = this.firstFormGroup.controls['state'];
-    this.stateControls.valueChanges.subscribe((state: string) => {
-      // ** getting stateIsoCode by filtering
-      this.stateIsoCode = this.states.filter((sateObj) => {
-        return sateObj.name === state
-      })
-      console.log(this.stateIsoCode[0].isoCode);
-      if (state) {
-        //** getting city*//
-        this.cities = this.service.getCitiesByState(this.countryIsoCode[0].isoCode, this.stateIsoCode[0].isoCode)
-        console.log(this.cities);
+    this.stateControls.valueChanges.subscribe((stateName: string) => {
 
-      }
+      // ** getting state - filtering by state-name
+      this.state = this.states.filter((sateObj) => {
+        return sateObj.name === stateName
+      })
+      // console.log("inidividual state",this.state);
+      // console.log(this.state);
+      //** getting city*//
+      this.cities = this.service.getCitiesByState(this.country[0].isoCode, this.state[0].isoCode)
+      console.log(this.cities);
+
+
     })
   }
 
-  ngOnInit(): void {
-    document.getElementById('Modalopen')?.click()
-    this.getAllCountry();
-    this.getState();
-    this.getCity()
-
-  }
-
   sendFormData(): void {
-    this.service.form1$.next(this.firstFormGroup.value)
-  }
 
+    if (localStorage.getItem("token")) {
+      this.service.form1$.next(this.firstFormGroup)
+
+    } else {
+      this.router.navigateByUrl("/login")
+    }
+    // console.log(this.service.val);
+
+
+  }
 
 }
+
+

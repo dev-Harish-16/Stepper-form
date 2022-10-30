@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CountryService } from '../country.service';
+import { MatStepper } from '@angular/material/stepper';
+import { Router } from '@angular/router';
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-form2',
@@ -16,19 +18,20 @@ export class Form2Component implements OnInit {
   public fileSize: number = 0
   public fileUrl: any;
   public finalfileArray: any = []
-  public imgUrl: string | ArrayBuffer;
   public individualFile: any;
   public length: any;
   public fullname: any;
 
-  constructor(private formBuilder: FormBuilder, private service: CountryService) {
+
+
+  constructor(private formBuilder: FormBuilder, private service: FormService, private matStepper: MatStepper, private router: Router) {
     this.secondForm()
 
   }
 
-  secondForm():void {
+  secondForm(): void {
     this.secondFormGroup = this.formBuilder.group({
-      confirmationNumber: [122131],
+      confirmationNumber: [87879],
       ticket: [12342414],
       dateOfFlight: [Date.now()],
       flightNumber: [2312414],
@@ -37,16 +40,34 @@ export class Form2Component implements OnInit {
       destination: ['mumbai'],
       textArea: ['', [Validators.maxLength(1500), Validators.required]],
       reply: ['', [Validators.required]],
-      
+
     })
   }
 
   ngOnInit(): void {
 
-    this.fullname = this.service.form1$
+    this.service.form1$.subscribe((res) => this.fullname = res)
+
+    this.service.fileArray$.subscribe((res) => {
+      this.fileArray = res
+    })
+
+    console.log(this.fileArray);
+
+    // this.service.isBooleanValue.subscribe((res) => {
+    //   this.fileArrayBoolean = res
+    // })
+    // // this.fileArrayBoolean == false ? this.fileArray : this.fileArray = []
+    // if (this.fileArrayBoolean == false) {
+    //   return this.fileArray
+    // } else {
+    //   this.fileArray = []
+    // }
+    // console.log(this.fileArrayBoolean);
+
   }
 
-  disableOption(event: { checked: boolean; }): void {
+  disableOption(event: { checked: boolean }): void {
     // **assigning boolean value 
     this.isDisable = event.checked
 
@@ -63,22 +84,26 @@ export class Form2Component implements OnInit {
   }
 
   file(event: any): void {
+
     const files = event.target.files
     console.log(files);
     // **Calculating File Length
     this.length = files.length
     this.fileLength += files.length
+
     //** Checking the File length <= 5
     if (this.fileLength <= 5) {
-
       // console.log(event.target.files[0]);
       // console.log(typeof event.target.files[0]);
       // ** pushing files(Blob) into FileArray
-      this.fileArray.push(files[0])
+      if (files.length > 0) {
+        this.fileArray.push(files[0])
+      }
+      console.log(this.fileLength);
       console.log(this.fileArray);
+
       // **Calculating file size
       // console.log(files[0].size);
-
       this.individualFile = files[0].size
       this.fileSize += files[0].size
 
@@ -95,16 +120,6 @@ export class Form2Component implements OnInit {
       }
       else {
         alert("upload successfull")
-        // ** reading File using FileReader
-        this.fileArray.forEach((Url: Blob) => {
-          const reader = new FileReader()
-          reader.readAsDataURL(Url)
-          reader.onload = () => {
-            this.fileUrl = reader.result
-          }
-          // console.log(this.fileUrl);
-        })
-
       }
 
     }
@@ -115,9 +130,22 @@ export class Form2Component implements OnInit {
 
   }
 
+  // ** file remove based on index
+  removeFile(index: any) {
+    console.log(index);
+    this.fileArray.splice(index, 1)
+    this.fileSize -= this.individualFile
+    this.fileLength -= this.length
+    console.log("file removed");
+
+
+  }
+
   sendData(): void {
-    this.service.form2$.next(this.secondFormGroup.value)
-    this.service.fileArray.next(this.fileArray)
+    this.service.form2$.next(this.secondFormGroup)
+    this.service.fileArray$.next(this.fileArray)
+    console.log(this.fileArray);
+
 
   }
 
