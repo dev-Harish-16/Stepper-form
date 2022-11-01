@@ -63,7 +63,7 @@ export class Form1Component implements OnInit {
 
   }
 
-  // ** when the CITY select field selected 
+  // ** when the Country select field is selected 
   getState(): void {
 
     // ** abstract Controls 
@@ -84,7 +84,7 @@ export class Form1Component implements OnInit {
 
   }
 
-  // * when the STATE select field selected 
+  // * when the STATE select field is selected 
   getCity(): void {
     // ** abstract Controls **//
     this.stateControls = this.firstFormGroup.controls['state'];

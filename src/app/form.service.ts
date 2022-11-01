@@ -31,7 +31,7 @@ export class FormService {
 
   }
 
-  signUp(userData: any) {
+  signUp(userData: NgForm) {
     return this.http.post<any>("http://localhost:5000/user/signup", userData)
 
   }

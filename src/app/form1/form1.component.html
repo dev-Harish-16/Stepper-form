@@ -9,11 +9,10 @@
       </div>
       <div class="col-12 col-lg-5">
         <h4 class="fw-bold text-start text-lg-end">All fileds required unless noted</h4>
-
       </div>
     </div>
   </div>
-  <div class="card-body border-top-0">
+  <div class="card-body ">
     <form [formGroup]="firstFormGroup">
       <div class="row row-cols-1">
         <div class="col">
@@ -42,6 +41,7 @@
             <div class="col">
               <mat-form-field appearance="fill">
                 <input matInput type="text" placeholder="First Name" formControlName="firstName">
+                <mat-error>Please enter the first name</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
@@ -52,6 +52,7 @@
             <div class="col">
               <mat-form-field appearance="fill">
                 <input matInput type="text" placeholder="Last Name" formControlName="lastName">
+                <mat-error>Please enter the Last name</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
@@ -62,6 +63,7 @@
                     {{country.name}}
                     ({{country.phonecode}}) </mat-option>
                 </mat-select>
+                <mat-error>Please enter the phonecode</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
@@ -84,12 +86,14 @@
                     {{ country.name }}
                   </mat-option>
                 </mat-select>
+                <mat-error>Please select the Country</mat-error>
               </mat-form-field>
 
             </div>
             <div class="col">
               <mat-form-field appearance="fill">
                 <input type="text" matInput placeholder="Address Line 1" formControlName="address1">
+                <mat-error>Please enter the Address</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
@@ -105,6 +109,7 @@
                     {{ state.name }}
                   </mat-option>
                 </mat-select>
+                <mat-error>Please select the state</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
@@ -115,18 +120,20 @@
                     {{ city.name }}
                   </mat-option>
                 </mat-select>
+                <mat-error>Please select the City</mat-error>
               </mat-form-field>
             </div>
             <div class="col">
               <mat-form-field appearance="fill">
                 <input type="number" matInput placeholder="Postal Code" formControlName="postalCode">
+                <mat-error>Please enter the Postalcode</mat-error>
               </mat-form-field>
             </div>
           </div>
         </div>
       </div>
       <div>
-        <button mat-button matStepperNext class="d-block ms-auto mat-next-button px-4 py-2"
+        <button mat-button matStepperNext class="d-block ms-auto mat-next-button mt-2 px-4 py-2"
           (click)="sendFormData()">Continue to
           Comment</button>
 

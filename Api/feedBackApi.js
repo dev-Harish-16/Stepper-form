@@ -4,10 +4,9 @@ const FeedBack = require("../models/feedBackSchema")
 const expressAsyncHandler = require("express-async-handler")
 const nodemailer = require('nodemailer');
 const multer = require('multer');
-const bcrypt = require('bcryptjs')
-const jwt = require("jsonwebtoken")
 
 
+// **nodeMailer configuration
 const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,

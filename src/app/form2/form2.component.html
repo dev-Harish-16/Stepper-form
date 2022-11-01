@@ -43,7 +43,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="d-flex justify-content-start justify-content-md-end">
-                                    <mat-checkbox class="example-margin " (change)="disableOption($event)">I don't
+                                    <mat-checkbox class="example-margin " color="primary" (change)="disableOption($event)">I don't
                                         have my
                                         Confirmation#
                                         or Ticket#</mat-checkbox>
@@ -134,7 +134,7 @@
                                     <mat-icon class="pe-3">attach_file</mat-icon>
                                     <h4 class="overflow-Content">{{file.name}}</h4>
                                     <mat-icon class="close-icon text-danger ps-2" role="button"
-                                        (click)="removeFile(i)">close
+                                        (click)="removeFile(file,i)">close
                                     </mat-icon>
                                 </div>
                             </div>

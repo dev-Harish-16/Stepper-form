@@ -13,11 +13,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
     },
   ],
 })
+
 export class StepperformComponent implements OnInit, OnDestroy {
 
   constructor() {
   }
-
+  
   ngOnInit() {
     document.getElementById('Modalopen')?.click()
     

@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken")
 userApp.post("/signup", expressAsyncHandler(async (req, res) => {
 
     const userData = req.body
-    console.log(userData);
+    // console.log(userData);
     const hashPassword = await bcrypt.hash(userData.password, 10)
     userData.password = hashPassword
     const user = await new User(userData).save()

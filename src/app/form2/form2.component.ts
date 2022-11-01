@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { FormService } from '../form.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { FormService } from '../form.service';
 export class Form2Component implements OnInit {
 
   public secondFormGroup: FormGroup;
-  public isDisable: boolean = false
+  public isDisable: boolean 
   public fileArray: any = []
   public fileLength: number = 0
   public fileSize: number = 0
@@ -21,7 +22,7 @@ export class Form2Component implements OnInit {
   public individualFile: any;
   public length: any;
   public fullname: any;
-
+  public subscription: Subscription
 
 
   constructor(private formBuilder: FormBuilder, private service: FormService, private matStepper: MatStepper, private router: Router) {
@@ -33,7 +34,7 @@ export class Form2Component implements OnInit {
     this.secondFormGroup = this.formBuilder.group({
       confirmationNumber: [87879],
       ticket: [12342414],
-      dateOfFlight: [Date.now()],
+      dateOfFlight: [''],
       flightNumber: [2312414],
       flightName: ['indigo'],
       origin: ['chennai'],
@@ -54,16 +55,7 @@ export class Form2Component implements OnInit {
 
     console.log(this.fileArray);
 
-    // this.service.isBooleanValue.subscribe((res) => {
-    //   this.fileArrayBoolean = res
-    // })
-    // // this.fileArrayBoolean == false ? this.fileArray : this.fileArray = []
-    // if (this.fileArrayBoolean == false) {
-    //   return this.fileArray
-    // } else {
-    //   this.fileArray = []
-    // }
-    // console.log(this.fileArrayBoolean);
+
 
   }
 
@@ -131,10 +123,11 @@ export class Form2Component implements OnInit {
   }
 
   // ** file remove based on index
-  removeFile(index: any) {
+  removeFile(fileObj,index: any) {
+    console.log(fileObj);
     console.log(index);
     this.fileArray.splice(index, 1)
-    this.fileSize -= this.individualFile
+    this.fileSize -= fileObj.size
     this.fileLength -= this.length
     console.log("file removed");
 

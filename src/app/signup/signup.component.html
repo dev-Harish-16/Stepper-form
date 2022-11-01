@@ -9,7 +9,7 @@
                             <mat-label>Name</mat-label>
                             <input type="text" matInput id="username" formControlName="username"
                                 placeholder="Ex. John Doe">
-                            <mat-error *ngIf="!signupForm.value.username.valid && !signupForm.value.username.touched">
+                            <mat-error *ngIf="!username.valid && !username.touched">
                                 Please enter a
                                 valid
                                 username!</mat-error>
@@ -50,7 +50,6 @@
                                 characters
                             </mat-error>
                         </mat-form-field>
-
                         <!-- submit button -->
                         <button mat-raised-button type="submit" color="primary">Signup</button>
                     </form>

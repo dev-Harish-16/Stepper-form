@@ -3,14 +3,16 @@ const Mongoose = require("mongoose")
 const feedbackApi = require("./Api/feedBackApi")
 const userApi = require("./Api/userApi")
 const app = exp()
+const compression = require("compression")
 const morgan = require("morgan")
 const cors = require("cors")
 const path = require("path")
 
+// MiddleWares
 app.use(exp.json())
 app.use(cors())
-// logger
-app.use(morgan("dev"))
+app.use(compression())//to compress the size of the response-inorder to boost the performance
+app.use(morgan("dev"))// logger
 
 // connect angular build with web server
 // __dirname ==> returns current directory name
