@@ -6,8 +6,11 @@ import { BehaviorSubject} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FormService {
 
+  public form1Dir$:BehaviorSubject<any>=new BehaviorSubject(null)
+  public form2Dir$:BehaviorSubject<any>=new BehaviorSubject(null)
   public form1$: BehaviorSubject<any> = new BehaviorSubject({})
   public form2$: BehaviorSubject<any> = new BehaviorSubject({})
   public fileArray$: BehaviorSubject<any> = new BehaviorSubject([])

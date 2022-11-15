@@ -1,6 +1,6 @@
 import { NumberInput } from '@angular/cdk/coercion';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, NgForm} from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { FormService } from '../form.service';
 import { feedbackData } from '../Data-Types/formdata';
@@ -17,6 +17,8 @@ export class ReviewComponent implements OnInit {
   public file: any
   public totalFormData: feedbackData
   public fileLength: any;
+  public ngForm1:NgForm;
+  public ngForm2:NgForm;
 
   constructor(private matStepper: MatStepper, private service: FormService) { }
 
@@ -84,8 +86,11 @@ export class ReviewComponent implements OnInit {
 
     setTimeout(() => {
       this.matStepper.reset()
-      this.matStepper.selectedIndex = 0
-      this.matStepper.selected.interacted = false
+      // this.matStepper.selectedIndex = 0
+      // this.matStepper.selected.interacted = false
+      // this.firstFormGroup.markAsUntouched
+      // this.firstFormGroup.markAsPristine
+      // this.firstFormGroup.updateValueAndValidity
       this.service.fileArray$.next([])
       // ** resetting the initial values
       this.secondFormGroup.patchValue({
@@ -96,8 +101,13 @@ export class ReviewComponent implements OnInit {
         origin: "chennai",
         destination: "mumbai"
       })
+      // ** resetting forms by NgForm directive
+      this.service.form1Dir$.subscribe(res=>this.ngForm1=res)
+      this.service.form2Dir$.subscribe(res=>this.ngForm2=res)
+      this.ngForm1.resetForm()
+      this.ngForm2.resetForm()
       localStorage.removeItem("token")
-
+      
     }, 2000)
 
   }

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { Router } from '@angular/router';
 import { ICountry, IState, ICity } from 'country-state-city';
-import { FormService} from '../form.service';
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-form1',
@@ -11,6 +11,8 @@ import { FormService} from '../form.service';
   styleUrls: ['./form1.component.css']
 })
 export class Form1Component implements OnInit {
+  
+  @ViewChild('ngform1') form1GroupDirective:NgForm
   public firstFormGroup: FormGroup;
   public countries: ICountry[];
   public states: IState[];
@@ -65,7 +67,6 @@ export class Form1Component implements OnInit {
 
   // ** when the Country select field is selected 
   getState(): void {
-
     // ** abstract Controls 
     this.countryControls = this.firstFormGroup.controls['country'];
     this.countryControls.valueChanges.subscribe((countryName: string) => {
@@ -89,7 +90,6 @@ export class Form1Component implements OnInit {
     // ** abstract Controls **//
     this.stateControls = this.firstFormGroup.controls['state'];
     this.stateControls.valueChanges.subscribe((stateName: string) => {
-
       // ** getting state - filtering by state-name
       this.state = this.states.filter((sateObj) => {
         return sateObj.name === stateName
@@ -105,13 +105,14 @@ export class Form1Component implements OnInit {
   }
 
   sendFormData(): void {
+    this.service.form1$.next(this.firstFormGroup)
+    this.service.form1Dir$.next(this.form1GroupDirective)
+    // if (localStorage.getItem("token")) {
+    //   this.service.form1$.next(this.firstFormGroup)
 
-    if (localStorage.getItem("token")) {
-      this.service.form1$.next(this.firstFormGroup)
-
-    } else {
-      this.router.navigateByUrl("/login")
-    }
+    // } else {
+    //   this.router.navigateByUrl("/login")
+    // }
     // console.log(this.service.val);
 
 
