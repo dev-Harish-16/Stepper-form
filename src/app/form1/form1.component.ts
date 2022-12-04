@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@an
 import { MatStepper } from '@angular/material/stepper';
 import { Router } from '@angular/router';
 import { ICountry, IState, ICity } from 'country-state-city';
+import { ToastrService } from 'ngx-toastr';
 import { FormService } from '../form.service';
 
 @Component({
@@ -11,8 +12,8 @@ import { FormService } from '../form.service';
   styleUrls: ['./form1.component.css']
 })
 export class Form1Component implements OnInit {
-  
-  @ViewChild('ngform1') form1GroupDirective:NgForm
+
+  @ViewChild('ngform1') form1GroupDirective: NgForm
   public firstFormGroup: FormGroup;
   public countries: ICountry[];
   public states: IState[];
@@ -26,7 +27,11 @@ export class Form1Component implements OnInit {
   cityControls: AbstractControl;
 
 
-  constructor(private formBuilder: FormBuilder, private service: FormService, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: FormService,
+    private router: Router,
+    private toast: ToastrService) {
     this.firstForm();
 
   }
@@ -105,15 +110,15 @@ export class Form1Component implements OnInit {
   }
 
   sendFormData(): void {
-    this.service.form1$.next(this.firstFormGroup)
-    this.service.form1Dir$.next(this.form1GroupDirective)
-    // if (localStorage.getItem("token")) {
-    //   this.service.form1$.next(this.firstFormGroup)
+    // user can proceed once they logged-in
+    if (localStorage.getItem("token")) {
+      this.toast.warning("kindly login and proceed")
+      this.service.form1$.next(this.firstFormGroup)
+      this.service.form1Dir$.next(this.form1GroupDirective)
 
-    // } else {
-    //   this.router.navigateByUrl("/login")
-    // }
-    // console.log(this.service.val);
+    } else {
+      this.router.navigateByUrl("/login")
+    }
 
 
   }
