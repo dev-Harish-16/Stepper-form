@@ -18,7 +18,7 @@ app.use(morgan('dev'))// logger
 // __dirname ==> returns current directory name
 app.use(exp.static(path.join(__dirname, "./dist/airlinesTravel")))
 
-const dbConnectionUrl = "mongodb+srv://harishdb:harishdb@cluster0.ylrtk.mongodb.net/airlineTravels?retryWrites=true&w=majority"
+const dbConnectionUrl = ""
 // connect method in mongoose returns promise
 Mongoose.connect(dbConnectionUrl)
     .then(() => console.log("DataBase Connected SuccessFully...."))
