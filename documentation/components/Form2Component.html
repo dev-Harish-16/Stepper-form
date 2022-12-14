@@ -75,6 +75,8 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
     </p>
 
 
@@ -142,8 +144,15 @@
                                 <a href="#fileLength" >fileLength</a>
                             </li>
                             <li>
+                                <a href="#fileref" >fileref</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#fileSize" >fileSize</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#fileType" >fileType</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -152,6 +161,13 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#finalfileArray" >finalfileArray</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#form1Subscription" >form1Subscription</a>
+                            </li>
+                            <li>
+                                <a href="#form2GroupDirective" >form2GroupDirective</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -164,6 +180,10 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#isDisable" >isDisable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isFileCheck" >isFileCheck</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -196,6 +216,12 @@
                                 <a href="#file" >file</a>
                             </li>
                             <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
@@ -225,12 +251,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, service: <a href="../injectables/FormService.html" target="_self">FormService</a>, matStepper: MatStepper, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, service: <a href="../injectables/FormService.html" target="_self">FormService</a>, toastr: ToastrService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/form2/form2.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/form2/form2.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -272,22 +298,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>matStepper</td>
+                                                        <td>toastr</td>
                                                   
                                                         <td>
-                                                                    <code>MatStepper</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>ToastrService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -333,8 +347,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/form2/form2.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/form2/form2.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -402,8 +416,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/app/form2/form2.component.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/app/form2/form2.component.ts:167</a></div>
                 </td>
             </tr>
 
@@ -455,6 +469,80 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/form2/form2.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="232"
+                            class="link-to-prism">src/app/form2/form2.component.ts:232</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -471,8 +559,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/form2/form2.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/form2/form2.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -508,8 +596,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/app/form2/form2.component.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/form2/form2.component.ts:215</a></div>
                 </td>
             </tr>
 
@@ -588,8 +676,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/form2/form2.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/form2/form2.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -625,8 +713,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/app/form2/form2.component.ts:136</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="225"
+                            class="link-to-prism">src/app/form2/form2.component.ts:225</a></div>
                 </td>
             </tr>
 
@@ -673,7 +761,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/form2/form2.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/form2/form2.component.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -705,7 +793,42 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/form2/form2.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/form2/form2.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileref"></a>
+                    <span class="name">
+                        <span ><b>fileref</b></span>
+                        <a href="#fileref"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;fileref&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/form2/form2.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -737,7 +860,39 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/form2/form2.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/form2/form2.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileType"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>fileType</b></span>
+                        <a href="#fileType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/form2/form2.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -764,7 +919,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/form2/form2.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/form2/form2.component.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -796,7 +951,69 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/form2/form2.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/form2/form2.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form1Subscription"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>form1Subscription</b></span>
+                        <a href="#form1Subscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/form2/form2.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form2GroupDirective"></a>
+                    <span class="name">
+                        <span ><b>form2GroupDirective</b></span>
+                        <a href="#form2GroupDirective"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;ngForm2&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/form2/form2.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -823,7 +1040,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/form2/form2.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/form2/form2.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -850,7 +1067,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/form2/form2.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/form2/form2.component.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -877,7 +1094,34 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/form2/form2.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/form2/form2.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isFileCheck"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isFileCheck</b></span>
+                        <a href="#isFileCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/form2/form2.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -904,7 +1148,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/form2/form2.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/form2/form2.component.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -931,7 +1175,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/form2/form2.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/form2/form2.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -958,7 +1202,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/form2/form2.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/form2/form2.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -971,10 +1215,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
-import { MatStepper } from &#x27;@angular/material/stepper&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, NgForm, Validators } from &#x27;@angular/forms&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
 import { FormService } from &#x27;../form.service&#x27;;
 
@@ -983,10 +1226,12 @@ import { FormService } from &#x27;../form.service&#x27;;
   templateUrl: &#x27;./form2.component.html&#x27;,
   styleUrls: [&#x27;./form2.component.css&#x27;]
 })
-export class Form2Component implements OnInit {
+export class Form2Component implements OnInit, OnDestroy, AfterViewInit {
 
+  @ViewChild(&#x27;ngForm2&#x27;) form2GroupDirective: NgForm
+  @ViewChild(&#x27;fileref&#x27;) fileref: ElementRef
   public secondFormGroup: FormGroup;
-  public isDisable: boolean 
+  public isDisable: boolean
   public fileArray: any &#x3D; []
   public fileLength: number &#x3D; 0
   public fileSize: number &#x3D; 0
@@ -996,22 +1241,26 @@ export class Form2Component implements OnInit {
   public length: any;
   public fullname: any;
   public subscription: Subscription
-
-
-  constructor(private formBuilder: FormBuilder, private service: FormService, private matStepper: MatStepper, private router: Router) {
+  public isFileCheck: boolean
+  public form1Subscription: Subscription;
+  public fileType: string[] &#x3D; [&#x27;&#x27;]
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: FormService,
+    private toastr: ToastrService) {
     this.secondForm()
 
   }
 
   secondForm(): void {
     this.secondFormGroup &#x3D; this.formBuilder.group({
-      confirmationNumber: [87879],
-      ticket: [12342414],
+      confirmationNumber: [&#x27;&#x27;, [Validators.required]],
+      ticket: [&#x27;&#x27;, [Validators.required]],
       dateOfFlight: [&#x27;&#x27;],
-      flightNumber: [2312414],
-      flightName: [&#x27;indigo&#x27;],
-      origin: [&#x27;chennai&#x27;],
-      destination: [&#x27;mumbai&#x27;],
+      flightNumber: [&#x27;&#x27;],
+      flightName: [&#x27;&#x27;],
+      origin: [&#x27;&#x27;],
+      destination: [&#x27;&#x27;],
       textArea: [&#x27;&#x27;, [Validators.maxLength(1500), Validators.required]],
       reply: [&#x27;&#x27;, [Validators.required]],
 
@@ -1019,83 +1268,168 @@ export class Form2Component implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.service.form1$.subscribe((res) &#x3D;&gt; this.fullname &#x3D; res)
+    this.form1Subscription &#x3D; this.service.form1$.subscribe((res) &#x3D;&gt; this.fullname &#x3D; res)
     this.service.fileArray$.subscribe((res) &#x3D;&gt; {
       this.fileArray &#x3D; res
     })
-
     console.log(this.fileArray);
 
-
-
   }
+
+  ngAfterViewInit() {
+
+    const filetypeArray &#x3D; this.fileref.nativeElement.accept.split(&#x27;,&#x27;);
+    console.log(filetypeArray);
+    this.fileType &#x3D; filetypeArray.map(element &#x3D;&gt; element.replace(/\./g, &quot;&quot;).trim())
+    console.log(this.fileType);
+    
+  }
+
 
   disableOption(event: { checked: boolean }): void {
     // **assigning boolean value 
     this.isDisable &#x3D; event.checked
+    this.service.checkBoxEvent$.next(this.isDisable)
+    console.log(this.isDisable);
 
     // **To Disable and Enable Formcontrol
     if (event.checked &#x3D;&#x3D;&#x3D; true) {
-      this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].disable()
-      this.secondFormGroup.controls[&#x27;ticket&#x27;].disable()
+      for (const key of Object.keys(this.secondFormGroup.controls)) {
+        if (key &#x3D;&#x3D; &quot;confirmationNumber&quot; || key &#x3D;&#x3D; &quot;ticket&quot;) {
+          console.log(key);
+          this.secondFormGroup.controls[key].reset()
+          this.secondFormGroup.controls[key].disable()
+          // this.secondFormGroup.controls[key].clearValidators()
+          // this.secondFormGroup.controls[key].updateValueAndValidity()
+        }
+        else {
+          if (key &#x3D;&#x3D; &quot;textArea&quot;) {
+            this.secondFormGroup.controls[key].setValidators([Validators.required, Validators.maxLength(1500)])
+            this.secondFormGroup.controls[key].updateValueAndValidity()
+          } else {
+            if (key !&#x3D;&#x3D; &quot;reply&quot;) {
+              this.secondFormGroup.controls[key].reset()
+              this.secondFormGroup.controls[key].setValidators([Validators.required, Validators.maxLength(1500)])
+              this.secondFormGroup.controls[key].updateValueAndValidity()
+            }
+          }
+        }
+      }
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].reset()
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].disable()
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].disable()
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].reset()
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].clearValidators()
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].clearValidators()
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].updateValueAndValidity()
+
+      // add validation-if checkbox is checked
+
+      // this.secondFormGroup.controls[&#x27;flightNumber&#x27;].setValidators([Validators.required])
+      // this.secondFormGroup.controls[&#x27;flightNumber&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;flightName&#x27;].setValidators([Validators.required])
+      // this.secondFormGroup.controls[&#x27;flightName&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;origin&#x27;].setValidators([Validators.required])
+      // this.secondFormGroup.controls[&#x27;origin&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;destination&#x27;].setValidators([Validators.required])
+      // this.secondFormGroup.controls[&#x27;destination&#x27;].updateValueAndValidity()
     }
-    else {
-      this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].enable()
-      this.secondFormGroup.controls[&#x27;ticket&#x27;].enable()
+    if (event.checked &#x3D;&#x3D;&#x3D; false) {
+      for (const key of Object.keys(this.secondFormGroup.controls)) {
+        if (key &#x3D;&#x3D; &quot;confirmationNumber&quot; || key &#x3D;&#x3D; &quot;ticket&quot;) {
+          this.secondFormGroup.controls[key].reset()
+          this.secondFormGroup.controls[key].enable()
+          // this.secondFormGroup.controls[key].setValidators([Validators.required])
+          // this.secondFormGroup.controls[key].updateValueAndValidity()
+        }
+        else {
+          if (key &#x3D;&#x3D; &quot;textArea&quot;) {
+            console.log(key);
+            this.secondFormGroup.controls[key].setValidators([Validators.required, Validators.maxLength(1500)])
+            this.secondFormGroup.controls[key].updateValueAndValidity()
+          }
+          else {
+            if (key !&#x3D;&#x3D; &quot;reply&quot;) {
+              this.secondFormGroup.controls[key].reset()
+              this.secondFormGroup.controls[key].clearValidators()
+              this.secondFormGroup.controls[key].updateValueAndValidity()
+            }
+
+          }
+
+        }
+      }
+
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].enable()
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].enable()
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].setValidators([Validators.required])
+      // this.secondFormGroup.controls[&#x27;confirmationNumber&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].setValidators([Validators.required])
+      // this.secondFormGroup.controls[&#x27;ticket&#x27;].updateValueAndValidity()
+
+      //remove validations - if checkbox is not checked
+      // this.secondFormGroup.controls[&#x27;flightNumber&#x27;].clearValidators()
+      // this.secondFormGroup.controls[&#x27;flightNumber&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;flightName&#x27;].clearValidators()
+      // this.secondFormGroup.controls[&#x27;flightName&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;origin&#x27;].clearValidators()
+      // this.secondFormGroup.controls[&#x27;origin&#x27;].updateValueAndValidity()
+      // this.secondFormGroup.controls[&#x27;destination&#x27;].clearValidators()
+      // this.secondFormGroup.controls[&#x27;destination&#x27;].updateValueAndValidity()
     }
 
   }
 
   file(event: any): void {
-
     const files &#x3D; event.target.files
-    console.log(files);
-    // **Calculating File Length
-    this.length &#x3D; files.length
-    this.fileLength +&#x3D; files.length
+    // console.log(files);
+    const type: string &#x3D; files[0].name.split(&quot;.&quot;).pop()
+    if (this.fileType.includes(type)) { //check the file-type is present in the array or not
+      // **Calculating File Length
+      this.length &#x3D; files.length
+      this.fileLength +&#x3D; files.length
+      //** Checking the File length &lt;&#x3D; 5
+      if (this.fileLength &lt;&#x3D; 5) {
+        // console.log(event.target.files[0]);
+        // console.log(typeof event.target.files[0]);
+        // ** pushing files(Blob) into FileArray
+        if (files.length &gt; 0) {
+          this.fileArray.push(files[0])
+        }
+        // **Calculating file size
+        // console.log(files[0].size);
+        this.individualFile &#x3D; files[0].size
+        this.fileSize +&#x3D; files[0].size
+        // console.log(&quot;total size&quot;,this.fileSize);
+        // ** Checking File Size
+        if (this.fileSize &gt;&#x3D; 25000000) {
+          // ** if fileSize is not matched ,remove file and subtract the length and size value 
+          this.fileArray.pop()
+          this.fileSize -&#x3D; this.individualFile
+          this.fileLength -&#x3D; this.length
+          console.log(&quot;file poped&quot;, this.fileArray);
+          this.toastr.warning(&quot;file size exceeded&quot;)
+        }
+        else {
+          this.toastr.success(&quot;Upload successfull &quot;)
 
-    //** Checking the File length &lt;&#x3D; 5
-    if (this.fileLength &lt;&#x3D; 5) {
-      // console.log(event.target.files[0]);
-      // console.log(typeof event.target.files[0]);
-      // ** pushing files(Blob) into FileArray
-      if (files.length &gt; 0) {
-        this.fileArray.push(files[0])
-      }
-      console.log(this.fileLength);
-      console.log(this.fileArray);
+        }
 
-      // **Calculating file size
-      // console.log(files[0].size);
-      this.individualFile &#x3D; files[0].size
-      this.fileSize +&#x3D; files[0].size
-
-      // console.log(&quot;total size&quot;,this.fileSize);
-      // ** Checking File Size
-      if (this.fileSize &gt;&#x3D; 25000000) {
-        // ** if fileSize is not matched ,
-        //**  remove file and subtract the length and size value 
-        this.fileArray.pop()
-        this.fileSize -&#x3D; this.individualFile
-        this.fileLength -&#x3D; this.length
-        console.log(&quot;file poped&quot;, this.fileArray);
-        alert(&quot;file size exceeded&quot;)
       }
       else {
-        alert(&quot;upload successfull&quot;)
-      }
+        this.toastr.warning(&quot;Maximum file upload reached&quot;)
 
+      }
     }
     else {
-      alert(&quot;Please Select 5 files or low&quot;)
-
+      this.toastr.warning(&quot;kindly upload files in given format&quot;)
     }
 
   }
 
   // ** file remove based on index
-  removeFile(fileObj,index: any) {
+  removeFile(fileObj, index: any) {
     console.log(fileObj);
     console.log(index);
     this.fileArray.splice(index, 1)
@@ -1103,23 +1437,24 @@ export class Form2Component implements OnInit {
     this.fileLength -&#x3D; this.length
     console.log(&quot;file removed&quot;);
 
-
   }
 
   sendData(): void {
     this.service.form2$.next(this.secondFormGroup)
     this.service.fileArray$.next(this.fileArray)
+    this.service.form2Dir$.next(this.form2GroupDirective)
     console.log(this.fileArray);
-
-
   }
 
+  ngOnDestroy(): void {
+    this.form1Subscription.unsubscribe()
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;secondFormGroup&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;secondFormGroup&quot; #ngForm2&#x3D;&quot;ngForm&quot;&gt;
     &lt;!-- confirmation and ticket section --&gt;
     &lt;section class&#x3D;&quot;card shadow border-0&quot;&gt;
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
@@ -1208,7 +1543,7 @@ export class Form2Component implements OnInit {
                             &lt;/div&gt;
                             &lt;div class&#x3D;&quot;col&quot;&gt;
                                 &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
-                                    &lt;mat-label&gt;&lt;/mat-label&gt;
+                                    &lt;mat-label&gt;Origin&lt;/mat-label&gt;
                                     &lt;input matInput type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Origin&quot; formControlName&#x3D;&quot;origin&quot;&gt;
                                 &lt;/mat-form-field&gt;
                             &lt;/div&gt;
@@ -1242,14 +1577,14 @@ export class Form2Component implements OnInit {
                     &lt;div class&#x3D;&quot;col&quot;&gt;
                         &lt;button mat-button class&#x3D;&quot;file-btn fw-bold&quot;&gt;&lt;input type&#x3D;&quot;file&quot;
                                 accept&#x3D;&quot;.jpg, .jpeg, .png, .pdf, .docx , .doc , .xls , .xlsx, .ppt , .pptx .csv&quot;
-                                (change)&#x3D;&quot;file($event)&quot;&gt; + Add an
+                                (change)&#x3D;&quot;file($event)&quot; #fileref&gt; + Add an
                             Attachement&lt;/button&gt;
                         &lt;h4&gt;Maximum number of Attachments: 5 items. Maximum file size: 25MB. Accepted file types:
                             JPEG,
                             JPG, PNG, PDF, PPT, PPTX, CSV, DOCX, DOC, XLSX, XLS.&lt;/h4&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;col&quot;&gt;
-                        &lt;div class&#x3D;&quot;row row-cols-1 row-cols-md-1 row-cols-lg-3&quot;&gt;
+                        &lt;div class&#x3D;&quot;row row-cols-1 row-cols-md-1 row-cols-lg-3 gy-2&quot;&gt;
                             &lt;div class&#x3D;&quot;col&quot; *ngFor&#x3D;&quot;let file of fileArray index as i &quot;&gt;
                                 &lt;div class&#x3D;&quot;d-flex justify-content-center attach-file pt-3 pb-2 rounded&quot;&gt;
                                     &lt;mat-icon class&#x3D;&quot;pe-3&quot;&gt;attach_file&lt;/mat-icon&gt;
@@ -1362,7 +1697,7 @@ input[type&#x3D;&quot;file&quot;] {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="secondFormGroup">    <!-- confirmation and ticket section -->    <section class="card shadow border-0">        <div class="card-body">            <div class="row row-cols-1 ">                <div class="col">                    <div class="row">                        <div class="col-12 col-lg-7">                            <h4>In order to assist you faster,Please lookup your flight details by providing your                                Confirmation #                                and Ticket #. Your Full Name must match your Ticket #. Don\'t have your Confirmation                                # or                                tickeet                                #?                                Check the Box below to continue wth partial (or no) flight information                            </h4>                        </div>                        <div class="col-12 col-lg-5">                            <h4 class="text-start text-lg-end fw-bold">All fileds required unless noted</h4>                        </div>                    </div>                    <div class="row">                        <div class=".col-12 col-lg-6">                            <h3 class="text-secondary fw-bold">Full Name</h3>                            <span>{{fullname.value?.firstName| titlecase}} {{fullname.value?.lastName                                | titlecase}}</span>                        </div>                        <div class="col-12 col-lg-6">                            <div class="row">                                <div class="col-12 col-md-5">                                    <mat-form-field appearance="fill">                                        <mat-label>Confirmation#</mat-label>                                        <input matInput type="number" placeholder="Confirmation#"                                            formControlName="confirmationNumber">                                    </mat-form-field>                                </div>                                <div class="col-12 col-md-7">                                    <mat-form-field appearance="fill">                                        <mat-label>Ticket#</mat-label>                                        <input matInput type="number" placeholder="Ticket#" formControlName="ticket">                                    </mat-form-field>                                </div>                                <div class="d-flex justify-content-start justify-content-md-end">                                    <mat-checkbox class="example-margin " color="primary" (change)="disableOption($event)">I don\'t                                        have my                                        Confirmation#                                        or Ticket#</mat-checkbox>                                </div>                                <div *ngIf="!isDisable">                                    <button mat-button class="lookupBtn d-block ms-auto mt-3 px-4 py-2"> Lookup                                        Flight                                        Details</button>                                </div>                            </div>                        </div>                    </div>                    <div class="mt-3" *ngIf="isDisable">                        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Choose a date</mat-label>                                    <input matInput [matDatepicker]="picker" formControlName="dateOfFlight">                                    <mat-hint>MM/DD/YYYY</mat-hint>                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>                                    <mat-datepicker #picker></mat-datepicker>                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Flight Number</mat-label>                                    <input type="number" matInput placeholder="Flight Number"                                        formControlName="flightNumber">                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Flight Name</mat-label>                                    <mat-select formControlName="flightName">                                        <mat-option value="indigo">Indigo </mat-option>                                        <mat-option value="jetairways">Jet airways </mat-option>                                        <mat-option value="airAsia">Air asia</mat-option>                                        <mat-option value="qatarAirways">Qatar Airways</mat-option>                                    </mat-select>                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label></mat-label>                                    <input matInput type="text" placeholder="Origin" formControlName="origin">                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Destination</mat-label>                                    <input matInput type="text" placeholder="Destination" formControlName="destination">                                </mat-form-field>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section>    <!-- Attachements and Comment Section -->    <section class="my-4">        <div class="card border-0 bg-white shadow py-3">            <div class="card-body">                <div class="row row-cols-1">                    <div class="col">                        <h4 class="text-end fw-bold">All fileds required unless noted</h4>                    </div>                    <div class="col">                        <h4 class="my-3">Please provide additional details below.(1500 character limit)</h4>                        <mat-form-field appearance="outline">                            <mat-label>Textarea</mat-label>                            <textarea matInput formControlName="textArea"></textarea>                        </mat-form-field>                    </div>                    <div class="col">                        <button mat-button class="file-btn fw-bold"><input type="file"                                accept=".jpg, .jpeg, .png, .pdf, .docx , .doc , .xls , .xlsx, .ppt , .pptx .csv"                                (change)="file($event)"> + Add an                            Attachement</button>                        <h4>Maximum number of Attachments: 5 items. Maximum file size: 25MB. Accepted file types:                            JPEG,                            JPG, PNG, PDF, PPT, PPTX, CSV, DOCX, DOC, XLSX, XLS.</h4>                    </div>                    <div class="col">                        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3">                            <div class="col" *ngFor="let file of fileArray index as i ">                                <div class="d-flex justify-content-center attach-file pt-3 pb-2 rounded">                                    <mat-icon class="pe-3">attach_file</mat-icon>                                    <h4 class="overflow-Content">{{file.name}}</h4>                                    <mat-icon class="close-icon text-danger ps-2" role="button"                                        (click)="removeFile(file,i)">close                                    </mat-icon>                                </div>                            </div>                        </div>                    </div>                    <div class="col">                        <h4>Would you like a reply?</h4>                        <mat-radio-group aria-label="Select an option" formControlName="reply">                            <mat-radio-button value="yes">Yes</mat-radio-button>                            <mat-radio-button class="ms-3" value="no">No</mat-radio-button>                        </mat-radio-group>                    </div>                </div>            </div>        </div>    </section>    <div class="row">        <div class="col">            <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-md-end gap-1 gap-md-3 ">                <button mat-button matStepperNext class=" mat-next-button px-4 py-2  " (click)="sendData()">Continue to                    Review</button>                <button mat-button matStepperPrevious class=" mat-previous-button px-5 py-1 ">Back</button>            </div>        </div>    </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="secondFormGroup" #ngForm2="ngForm">    <!-- confirmation and ticket section -->    <section class="card shadow border-0">        <div class="card-body">            <div class="row row-cols-1 ">                <div class="col">                    <div class="row">                        <div class="col-12 col-lg-7">                            <h4>In order to assist you faster,Please lookup your flight details by providing your                                Confirmation #                                and Ticket #. Your Full Name must match your Ticket #. Don\'t have your Confirmation                                # or                                tickeet                                #?                                Check the Box below to continue wth partial (or no) flight information                            </h4>                        </div>                        <div class="col-12 col-lg-5">                            <h4 class="text-start text-lg-end fw-bold">All fileds required unless noted</h4>                        </div>                    </div>                    <div class="row">                        <div class=".col-12 col-lg-6">                            <h3 class="text-secondary fw-bold">Full Name</h3>                            <span>{{fullname.value?.firstName| titlecase}} {{fullname.value?.lastName                                | titlecase}}</span>                        </div>                        <div class="col-12 col-lg-6">                            <div class="row">                                <div class="col-12 col-md-5">                                    <mat-form-field appearance="fill">                                        <mat-label>Confirmation#</mat-label>                                        <input matInput type="number" placeholder="Confirmation#"                                            formControlName="confirmationNumber">                                    </mat-form-field>                                </div>                                <div class="col-12 col-md-7">                                    <mat-form-field appearance="fill">                                        <mat-label>Ticket#</mat-label>                                        <input matInput type="number" placeholder="Ticket#" formControlName="ticket">                                    </mat-form-field>                                </div>                                <div class="d-flex justify-content-start justify-content-md-end">                                    <mat-checkbox class="example-margin " color="primary" (change)="disableOption($event)">I don\'t                                        have my                                        Confirmation#                                        or Ticket#</mat-checkbox>                                </div>                                <div *ngIf="!isDisable">                                    <button mat-button class="lookupBtn d-block ms-auto mt-3 px-4 py-2"> Lookup                                        Flight                                        Details</button>                                </div>                            </div>                        </div>                    </div>                    <div class="mt-3" *ngIf="isDisable">                        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Choose a date</mat-label>                                    <input matInput [matDatepicker]="picker" formControlName="dateOfFlight">                                    <mat-hint>MM/DD/YYYY</mat-hint>                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>                                    <mat-datepicker #picker></mat-datepicker>                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Flight Number</mat-label>                                    <input type="number" matInput placeholder="Flight Number"                                        formControlName="flightNumber">                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Flight Name</mat-label>                                    <mat-select formControlName="flightName">                                        <mat-option value="indigo">Indigo </mat-option>                                        <mat-option value="jetairways">Jet airways </mat-option>                                        <mat-option value="airAsia">Air asia</mat-option>                                        <mat-option value="qatarAirways">Qatar Airways</mat-option>                                    </mat-select>                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Origin</mat-label>                                    <input matInput type="text" placeholder="Origin" formControlName="origin">                                </mat-form-field>                            </div>                            <div class="col">                                <mat-form-field appearance="fill">                                    <mat-label>Destination</mat-label>                                    <input matInput type="text" placeholder="Destination" formControlName="destination">                                </mat-form-field>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section>    <!-- Attachements and Comment Section -->    <section class="my-4">        <div class="card border-0 bg-white shadow py-3">            <div class="card-body">                <div class="row row-cols-1">                    <div class="col">                        <h4 class="text-end fw-bold">All fileds required unless noted</h4>                    </div>                    <div class="col">                        <h4 class="my-3">Please provide additional details below.(1500 character limit)</h4>                        <mat-form-field appearance="outline">                            <mat-label>Textarea</mat-label>                            <textarea matInput formControlName="textArea"></textarea>                        </mat-form-field>                    </div>                    <div class="col">                        <button mat-button class="file-btn fw-bold"><input type="file"                                accept=".jpg, .jpeg, .png, .pdf, .docx , .doc , .xls , .xlsx, .ppt , .pptx .csv"                                (change)="file($event)" #fileref> + Add an                            Attachement</button>                        <h4>Maximum number of Attachments: 5 items. Maximum file size: 25MB. Accepted file types:                            JPEG,                            JPG, PNG, PDF, PPT, PPTX, CSV, DOCX, DOC, XLSX, XLS.</h4>                    </div>                    <div class="col">                        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 gy-2">                            <div class="col" *ngFor="let file of fileArray index as i ">                                <div class="d-flex justify-content-center attach-file pt-3 pb-2 rounded">                                    <mat-icon class="pe-3">attach_file</mat-icon>                                    <h4 class="overflow-Content">{{file.name}}</h4>                                    <mat-icon class="close-icon text-danger ps-2" role="button"                                        (click)="removeFile(file,i)">close                                    </mat-icon>                                </div>                            </div>                        </div>                    </div>                    <div class="col">                        <h4>Would you like a reply?</h4>                        <mat-radio-group aria-label="Select an option" formControlName="reply">                            <mat-radio-button value="yes">Yes</mat-radio-button>                            <mat-radio-button class="ms-3" value="no">No</mat-radio-button>                        </mat-radio-group>                    </div>                </div>            </div>        </div>    </section>    <div class="row">        <div class="col">            <div class="d-flex flex-column flex-lg-row justify-content-center justify-content-md-end gap-1 gap-md-3 ">                <button mat-button matStepperNext class=" mat-next-button px-4 py-2  " (click)="sendData()">Continue to                    Review</button>                <button mat-button matStepperPrevious class=" mat-previous-button px-5 py-1 ">Back</button>            </div>        </div>    </div></form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Form1Component', 'selector': 'app-form1'},{'name': 'Form2Component', 'selector': 'app-form2'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ReviewComponent', 'selector': 'app-review'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StepperformComponent', 'selector': 'app-stepperform'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Form2Component'};

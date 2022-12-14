@@ -1,0 +1,44 @@
+.sign-up-form {
+    background-image: url("https://www.jally.de/media/619/1403-wallpaper-bangkok-airport-terminal.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-name: fade-out;
+    animation-duration: 1.5s;
+}
+
+.signup-img-container {
+    position: relative;
+
+}
+
+img {
+    filter: blur(1.6px)
+}
+
+.signup-imgText {
+    position: absolute;
+    right: 0%;
+    top: 25%;
+    font-style: italic;
+    text-align: center;
+    font-weight: bolder;
+    color: #fff;
+}
+@media(max-width:1200px) {
+    .signup-img {
+        width: 100%;
+        height: 450px;
+
+    }
+}
+
+
+@keyframes fade-out {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

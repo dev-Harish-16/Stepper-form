@@ -422,9 +422,9 @@ export class LoginComponent implements OnInit {
     console.log(form.value);
     this.service.login(form.value).subscribe((res) &#x3D;&gt; {
       console.log(&quot;Response From Backend&quot;, res);
-      const token &#x3D; res.payload
+      const token &#x3D; res.token
       localStorage.setItem(&quot;token&quot;, token)
-      if (res.payload) {
+      if (token) {
         this.toast.success(&quot;Login Successfull&quot;)
         this.router.navigateByUrl(&quot;/stepper&quot;)
       } else {
@@ -442,45 +442,50 @@ export class LoginComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid py-5 h-100&quot; style&#x3D;&quot;background-color: grey;&quot;&gt;
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-        &lt;div class&#x3D;&quot;row d-flex align-items-center justify-content-center py-5 h-100 px-2 &quot;&gt;
-            &lt;div class&#x3D;&quot;col-12 col-md-7 col-lg-7 col-xl-7  p-4 rounded &quot;&gt;
-                &lt;div class&#x3D;&quot;card rounded border-0 py-3 &quot;&gt;
-                    &lt;form class&#x3D;&quot; w-100 p-5&quot; (ngSubmit)&#x3D;&quot;loginForm.valid &amp;&amp; onLogin(loginForm)&quot; #loginForm&#x3D;&quot;ngForm&quot;&gt;
-
-                        &lt;!-- E-mail input --&gt;
-                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
-                            &lt;mat-label&gt;E-Mail&lt;/mat-label&gt;
-                            &lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; ngModel matInput placeholder&#x3D;&quot;Ex. abc@example.com&quot;
-                                #emailInput&#x3D;&quot;ngModel&quot; required email&gt;
-                            &lt;mat-error *ngIf&#x3D;&quot;emailInput.invalid&quot;&gt;Please enter a valid Email.&lt;/mat-error&gt;
-                        &lt;/mat-form-field&gt;
-
-                        &lt;!-- Password-input --&gt;
-                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
-                            &lt;mat-label&gt;Password&lt;/mat-label&gt;
-                            &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; ngModel matInput placeholder&#x3D;&quot;Password&quot;
-                                #passwordInput&#x3D;&quot;ngModel&quot; required [type]&#x3D;&quot;hide ? &#x27;password&#x27; : &#x27;text&#x27;&quot;&gt;
-                            &lt;button mat-icon-button type&#x3D;&quot;button&quot; matSuffix (click)&#x3D;&quot;hide &#x3D; !hide&quot; [attr.aria-label]&#x3D;&quot;&#x27;Hide password&#x27;&quot;
-                                [attr.aria-pressed]&#x3D;&quot;hide&quot;&gt;
-                                &lt;mat-icon&gt;{{hide ? &#x27;visibility_off&#x27; : &#x27;visibility&#x27;}}&lt;/mat-icon&gt;
-                            &lt;/button&gt;
-                            &lt;mat-error *ngIf&#x3D;&quot;passwordInput.invalid&quot;&gt;Please enter a valid Password.&lt;/mat-error&gt;
-                        &lt;/mat-form-field&gt;
-
-                        &lt;!-- Submit button --&gt;
-                        &lt;div class&#x3D;&quot;d-flex flex-column flex-md-row justify-content evenly gap-2&quot;&gt;
-                            &lt;button mat-raised-button type&#x3D;&quot;submit&quot; color&#x3D;&quot;primary&quot;
-                                class&#x3D;&quot; w-100 w-lg-50 d-block mx-auto&quot;&gt;Login&lt;/button&gt;
-                            &lt;button mat-stroked-button color&#x3D;&quot;accent&quot; type&#x3D;&quot;submit&quot;
-                                class&#x3D;&quot; w-100 w-lg-50 d-block mx-auto&quot; routerLink&#x3D;&quot;/signup&quot;&gt;sign up&lt;/button&gt;
-                        &lt;/div&gt;
-                    &lt;/form&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid d-flex justify-content-center align-items-center login-form h-100&quot;&gt;
+    &lt;section class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;loginForm row row-cols-1 g-0 rounded-4 shadow-lg bg-white&quot;&gt;
+            &lt;div class&#x3D;&quot; d-none d-md-block col-md-6 rounded-start h-100&quot;&gt;
+                &lt;div class&#x3D;&quot;h-100 &quot;&gt;
+                    &lt;img src&#x3D;&quot;../../assets/login-form-img.jpeg&quot; class&#x3D;&quot;login-form-img img-fluid rounded-3 w-100 h-100&quot;&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-12 col-md-6 d-flex justify-content-center align-items-center h-100 rounded-4&quot;&gt;
+                &lt;form class&#x3D;&quot; w-100 p-5 h-auto&quot; (ngSubmit)&#x3D;&quot;loginForm.valid &amp;&amp; onLogin(loginForm)&quot; #loginForm&#x3D;&quot;ngForm&quot;&gt;
+                    &lt;!-- E-mail input --&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;E-Mail&lt;/mat-label&gt;
+                        &lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; ngModel matInput placeholder&#x3D;&quot;Ex. abc@example.com&quot;
+                            #emailInput&#x3D;&quot;ngModel&quot; required email&gt;
+                        &lt;mat-error *ngIf&#x3D;&quot;emailInput.invalid&quot;&gt;Please enter a valid Email.&lt;/mat-error&gt;
+                    &lt;/mat-form-field&gt;
+
+                    &lt;!-- Password-input --&gt;
+                    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Password&lt;/mat-label&gt;
+                        &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; ngModel matInput placeholder&#x3D;&quot;Password&quot;
+                            #passwordInput&#x3D;&quot;ngModel&quot; required [type]&#x3D;&quot;hide ? &#x27;password&#x27; : &#x27;text&#x27;&quot;&gt;
+                        &lt;button mat-icon-button type&#x3D;&quot;button&quot; matSuffix (click)&#x3D;&quot;hide &#x3D; !hide&quot;
+                            [attr.aria-label]&#x3D;&quot;&#x27;Hide password&#x27;&quot; [attr.aria-pressed]&#x3D;&quot;hide&quot;&gt;
+                            &lt;mat-icon&gt;{{hide ? &#x27;visibility_off&#x27; : &#x27;visibility&#x27;}}&lt;/mat-icon&gt;
+                        &lt;/button&gt;
+                        &lt;mat-error *ngIf&#x3D;&quot;passwordInput.invalid&quot;&gt;Please enter a valid Password.&lt;/mat-error&gt;
+                    &lt;/mat-form-field&gt;
+
+                    &lt;!-- Submit button --&gt;
+                    &lt;div class&#x3D;&quot;d-flex flex-column gap-2&quot;&gt;
+                        &lt;button mat-raised-button type&#x3D;&quot;submit&quot; color&#x3D;&quot;primary&quot;
+                            class&#x3D;&quot; w-100 w-lg-50 d-block mx-auto&quot;&gt;Login&lt;/button&gt;
+                        &lt;p class&#x3D;&quot;text-center mt-2&quot;&gt;Don&#x27;t you have an account? &lt;a
+                                class&#x3D;&quot;text-decoration-none text-danger fw-bold&quot; routerLink&#x3D;&quot;/signup&quot;&gt;Sign up&lt;/a&gt;
+                        &lt;/p&gt;
+                        &lt;!-- &lt;button mat-stroked-button color&#x3D;&quot;accent&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot; w-100 w-lg-50 d-block mx-auto&quot;
+                            routerLink&#x3D;&quot;/signup&quot;&gt;sign up&lt;/button&gt; --&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/section&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -488,7 +493,31 @@ export class LoginComponent implements OnInit {
                 <p class="comment">
                     <code>./login.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.login-form{
+    background-image: url(&quot;../../assets/login-bg.webp&quot;);
+    background-size:cover;
+    background-repeat: no-repeat;
+    animation-name: fade-out ;
+    animation-duration: 1.5s;
+}
+@keyframes fade-out {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media(max-width:1200px){
+    .login-form-img{
+        width: 500px !important;
+        height: 400px !important;
+     
+    }
+}
+
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -516,7 +545,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid py-5 h-100" style="background-color: grey;">    <div class="container">        <div class="row d-flex align-items-center justify-content-center py-5 h-100 px-2 ">            <div class="col-12 col-md-7 col-lg-7 col-xl-7  p-4 rounded ">                <div class="card rounded border-0 py-3 ">                    <form class=" w-100 p-5" (ngSubmit)="loginForm.valid && onLogin(loginForm)" #loginForm="ngForm">                        <!-- E-mail input -->                        <mat-form-field appearance="outline">                            <mat-label>E-Mail</mat-label>                            <input type="email" name="email" ngModel matInput placeholder="Ex. abc@example.com"                                #emailInput="ngModel" required email>                            <mat-error *ngIf="emailInput.invalid">Please enter a valid Email.</mat-error>                        </mat-form-field>                        <!-- Password-input -->                        <mat-form-field appearance="outline">                            <mat-label>Password</mat-label>                            <input type="password" name="password" ngModel matInput placeholder="Password"                                #passwordInput="ngModel" required [type]="hide ? \'password\' : \'text\'">                            <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="\'Hide password\'"                                [attr.aria-pressed]="hide">                                <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>                            </button>                            <mat-error *ngIf="passwordInput.invalid">Please enter a valid Password.</mat-error>                        </mat-form-field>                        <!-- Submit button -->                        <div class="d-flex flex-column flex-md-row justify-content evenly gap-2">                            <button mat-raised-button type="submit" color="primary"                                class=" w-100 w-lg-50 d-block mx-auto">Login</button>                            <button mat-stroked-button color="accent" type="submit"                                class=" w-100 w-lg-50 d-block mx-auto" routerLink="/signup">sign up</button>                        </div>                    </form>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid d-flex justify-content-center align-items-center login-form h-100">    <section class="container">        <div class="loginForm row row-cols-1 g-0 rounded-4 shadow-lg bg-white">            <div class=" d-none d-md-block col-md-6 rounded-start h-100">                <div class="h-100 ">                    <img src="../../assets/login-form-img.jpeg" class="login-form-img img-fluid rounded-3 w-100 h-100">                </div>            </div>            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center h-100 rounded-4">                <form class=" w-100 p-5 h-auto" (ngSubmit)="loginForm.valid && onLogin(loginForm)" #loginForm="ngForm">                    <!-- E-mail input -->                    <mat-form-field appearance="outline">                        <mat-label>E-Mail</mat-label>                        <input type="email" name="email" ngModel matInput placeholder="Ex. abc@example.com"                            #emailInput="ngModel" required email>                        <mat-error *ngIf="emailInput.invalid">Please enter a valid Email.</mat-error>                    </mat-form-field>                    <!-- Password-input -->                    <mat-form-field appearance="outline">                        <mat-label>Password</mat-label>                        <input type="password" name="password" ngModel matInput placeholder="Password"                            #passwordInput="ngModel" required [type]="hide ? \'password\' : \'text\'">                        <button mat-icon-button type="button" matSuffix (click)="hide = !hide"                            [attr.aria-label]="\'Hide password\'" [attr.aria-pressed]="hide">                            <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>                        </button>                        <mat-error *ngIf="passwordInput.invalid">Please enter a valid Password.</mat-error>                    </mat-form-field>                    <!-- Submit button -->                    <div class="d-flex flex-column gap-2">                        <button mat-raised-button type="submit" color="primary"                            class=" w-100 w-lg-50 d-block mx-auto">Login</button>                        <p class="text-center mt-2">Don\'t you have an account? <a                                class="text-decoration-none text-danger fw-bold" routerLink="/signup">Sign up</a>                        </p>                        <!-- <button mat-stroked-button color="accent" type="submit" class=" w-100 w-lg-50 d-block mx-auto"                            routerLink="/signup">sign up</button> -->                    </div>                </form>            </div>        </div>    </section></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Form1Component', 'selector': 'app-form1'},{'name': 'Form2Component', 'selector': 'app-form2'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ReviewComponent', 'selector': 'app-review'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StepperformComponent', 'selector': 'app-stepperform'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

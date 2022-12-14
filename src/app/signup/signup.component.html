@@ -1,8 +1,18 @@
-<div class="container-fluid py-5 h-100" style="background-color: grey;">
-    <div class="container">
-        <div class="row d-flex align-items-center justify-content-center h-100 px-2 ">
-            <div class="col-12 col-md-7 col-lg-7 col-xl-7  p-4 rounded ">
-                <div class="card rounded border-0 p-5">
+<div class="container-fluid d-flex justify-content-center align-items-center sign-up-form h-100">
+    <section class="container">
+        <div class=" row row-cols-1 g-0 rounded-4 shadow-lg" style="background-color: beige;">
+            <div class=" d-none d-md-block col-md-6 rounded-start h-100 order-2">
+                <div class="h-100 signup-img-container">
+                    <img src="../../assets/signup-form-img.jpg" class=" signup-img img-fluid rounded-3 ">
+                    <div class="signup-imgText">
+                        <p class=" display-4 ">Fly with us</p>
+                        <p class=" display-6">We'll make your Journey Memorably....</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center h-100 rounded-4 order-1">
+                <div class=" rounded border-0 p-5">
                     <form [formGroup]="signupForm" #ref="ngForm" (ngSubmit)="ref.valid && onSubmit()">
                         <!-- username -->
                         <mat-form-field appearance="outline">
@@ -21,8 +31,7 @@
                                 <mat-form-field appearance="outline">
                                     <mat-label>Mobile Number</mat-label>
                                     <input type="number" matInput id="mobile" formControlName="mobile">
-                                    <mat-error>Please enter a valid Mobile
-                                        Number!</mat-error>
+                                    <mat-error>Please enter a valid Mobile-No!</mat-error>
                                 </mat-form-field>
                             </div>
                             <!-- E-mail -->
@@ -32,7 +41,7 @@
                                     <input type="email" matInput id="email" formControlName="email"
                                         placeholder="Ex. abc@example.com">
                                     <mat-error>Please enter a valid
-                                        Email Address!</mat-error>
+                                        Email!</mat-error>
                                 </mat-form-field>
                             </div>
                         </div>
@@ -51,10 +60,10 @@
                             </mat-error>
                         </mat-form-field>
                         <!-- submit button -->
-                        <button mat-raised-button type="submit" color="primary">Signup</button>
+                        <button mat-raised-button type="submit" class="d-block w-100" color="primary">Signup</button>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>

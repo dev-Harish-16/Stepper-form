@@ -9,17 +9,16 @@ const cors = require("cors")
 const path = require("path")
 
 // MiddleWares
-app.use(exp.json())
-app.use(cors())
-app.use(compression())//to compress the size of the response-inorder to boost the performance
-app.use(morgan("dev"))// logger
+app.use(exp.json())//body-parser
+app.use(cors())//cors
+app.use(compression())//to compress the size of the response
+app.use(morgan('dev'))// logger
 
 // connect angular build with web server
 // __dirname ==> returns current directory name
 app.use(exp.static(path.join(__dirname, "./dist/airlinesTravel")))
 
-
-const dbConnectionUrl = "mongodb://localhost:27017/airlineTravels"
+const dbConnectionUrl = "mongodb+srv://harishdb:harishdb@cluster0.ylrtk.mongodb.net/airlineTravels?retryWrites=true&w=majority"
 // connect method in mongoose returns promise
 Mongoose.connect(dbConnectionUrl)
     .then(() => console.log("DataBase Connected SuccessFully...."))

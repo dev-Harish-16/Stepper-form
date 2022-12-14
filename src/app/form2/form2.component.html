@@ -87,7 +87,7 @@
                             </div>
                             <div class="col">
                                 <mat-form-field appearance="fill">
-                                    <mat-label></mat-label>
+                                    <mat-label>Origin</mat-label>
                                     <input matInput type="text" placeholder="Origin" formControlName="origin">
                                 </mat-form-field>
                             </div>
@@ -121,14 +121,14 @@
                     <div class="col">
                         <button mat-button class="file-btn fw-bold"><input type="file"
                                 accept=".jpg, .jpeg, .png, .pdf, .docx , .doc , .xls , .xlsx, .ppt , .pptx .csv"
-                                (change)="file($event)"> + Add an
+                                (change)="file($event)" #fileref> + Add an
                             Attachement</button>
                         <h4>Maximum number of Attachments: 5 items. Maximum file size: 25MB. Accepted file types:
                             JPEG,
                             JPG, PNG, PDF, PPT, PPTX, CSV, DOCX, DOC, XLSX, XLS.</h4>
                     </div>
                     <div class="col">
-                        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3">
+                        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 gy-2">
                             <div class="col" *ngFor="let file of fileArray index as i ">
                                 <div class="d-flex justify-content-center attach-file pt-3 pb-2 rounded">
                                     <mat-icon class="pe-3">attach_file</mat-icon>

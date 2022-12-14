@@ -112,11 +112,11 @@ export class Form1Component implements OnInit {
   sendFormData(): void {
     // user can proceed once they logged-in
     if (localStorage.getItem("token")) {
-      this.toast.warning("kindly login and proceed")
       this.service.form1$.next(this.firstFormGroup)
       this.service.form1Dir$.next(this.form1GroupDirective)
 
     } else {
+      this.toast.warning("kindly login and proceed")
       this.router.navigateByUrl("/login")
     }
 

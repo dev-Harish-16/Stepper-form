@@ -14,6 +14,7 @@ export class FormService {
   public form1$: BehaviorSubject<any> = new BehaviorSubject({})
   public form2$: BehaviorSubject<any> = new BehaviorSubject({})
   public fileArray$: BehaviorSubject<any> = new BehaviorSubject([])
+  public checkBoxEvent$: BehaviorSubject<any> = new BehaviorSubject(false)
 
   constructor(private http: HttpClient) { }
 

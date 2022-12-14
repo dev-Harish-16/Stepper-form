@@ -1,38 +1,42 @@
 import { NumberInput } from '@angular/cdk/coercion';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm} from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormGroup, NgForm } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { FormService } from '../form.service';
 import { feedbackData } from '../Data-Types/formdata';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.css']
 })
-export class ReviewComponent implements OnInit {
+export class ReviewComponent implements OnInit, OnDestroy {
 
   public firstFormGroup: FormGroup
   public secondFormGroup: any
   public file: any
   public totalFormData: feedbackData
   public fileLength: any;
-  public ngForm1:NgForm;
-  public ngForm2:NgForm;
+  public ngForm1: NgForm;
+  public ngForm2: NgForm;
+  public form1Subscription: Subscription;
+  public form2Subscription: Subscription;
+  public form3Subscription: Subscription;
 
   constructor(private matStepper: MatStepper, private service: FormService) { }
 
   ngOnInit(): void {
 
-    this.service.form1$.subscribe({
+    this.form1Subscription = this.service.form1$.subscribe({
       next: (res) => { this.firstFormGroup = res }
     })
 
-    this.service.form2$.subscribe({
+    this.form2Subscription = this.service.form2$.subscribe({
       next: (res) => { this.secondFormGroup = res }
     })
 
-    this.service.fileArray$.subscribe({
+    this.form3Subscription = this.service.fileArray$.subscribe({
       next: (res) => { this.fileLength = res.length }
     })
 
@@ -86,30 +90,30 @@ export class ReviewComponent implements OnInit {
 
     setTimeout(() => {
       this.matStepper.reset()
-      // this.matStepper.selectedIndex = 0
-      // this.matStepper.selected.interacted = false
-      // this.firstFormGroup.markAsUntouched
-      // this.firstFormGroup.markAsPristine
-      // this.firstFormGroup.updateValueAndValidity
       this.service.fileArray$.next([])
-      // ** resetting the initial values
-      this.secondFormGroup.patchValue({
-        confirmationNumber: "87879",
-        ticket: "9090900",
-        flightNumber: 5555,
-        flightName: "indigo",
-        origin: "chennai",
-        destination: "mumbai"
-      })
+      // // ** resetting the initial values
+      // this.secondFormGroup.patchValue({
+      //   confirmationNumber: "87879",
+      //   ticket: "9090900",
+      //   flightNumber: 5555,
+      //   flightName: "indigo",
+      //   origin: "chennai",
+      //   destination: "mumbai"
+      // })
       // ** resetting forms by NgForm directive
-      this.service.form1Dir$.subscribe(res=>this.ngForm1=res)
-      this.service.form2Dir$.subscribe(res=>this.ngForm2=res)
+      this.service.form1Dir$.subscribe(res => this.ngForm1 = res)
+      this.service.form2Dir$.subscribe(res => this.ngForm2 = res)
       this.ngForm1.resetForm()
       this.ngForm2.resetForm()
       localStorage.removeItem("token")
-      
+
     }, 2000)
 
   }
 
+  ngOnDestroy(): void {
+    this.form1Subscription.unsubscribe()
+    this.form2Subscription.unsubscribe()
+    this.form3Subscription.unsubscribe()
+  }
 }

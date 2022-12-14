@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
     console.log(form.value);
     this.service.login(form.value).subscribe((res) => {
       console.log("Response From Backend", res);
-      const token = res.payload
+      const token = res.token
       localStorage.setItem("token", token)
-      if (res.payload) {
+      if (token) {
         this.toast.success("Login Successfull")
         this.router.navigateByUrl("/stepper")
       } else {

@@ -702,11 +702,21 @@ export class SignupComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid py-5 h-100&quot; style&#x3D;&quot;background-color: grey;&quot;&gt;
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-        &lt;div class&#x3D;&quot;row d-flex align-items-center justify-content-center h-100 px-2 &quot;&gt;
-            &lt;div class&#x3D;&quot;col-12 col-md-7 col-lg-7 col-xl-7  p-4 rounded &quot;&gt;
-                &lt;div class&#x3D;&quot;card rounded border-0 p-5&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid d-flex justify-content-center align-items-center sign-up-form h-100&quot;&gt;
+    &lt;section class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot; row row-cols-1 g-0 rounded-4 shadow-lg&quot; style&#x3D;&quot;background-color: beige;&quot;&gt;
+            &lt;div class&#x3D;&quot; d-none d-md-block col-md-6 rounded-start h-100 order-2&quot;&gt;
+                &lt;div class&#x3D;&quot;h-100 signup-img-container&quot;&gt;
+                    &lt;img src&#x3D;&quot;../../assets/signup-form-img.jpg&quot; class&#x3D;&quot; signup-img img-fluid rounded-3 &quot;&gt;
+                    &lt;div class&#x3D;&quot;signup-imgText&quot;&gt;
+                        &lt;p class&#x3D;&quot; display-4 &quot;&gt;Fly with us&lt;/p&gt;
+                        &lt;p class&#x3D;&quot; display-6&quot;&gt;We&#x27;ll make your Journey Memorably....&lt;/p&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-12 col-md-6 d-flex justify-content-center align-items-center h-100 rounded-4 order-1&quot;&gt;
+                &lt;div class&#x3D;&quot; rounded border-0 p-5&quot;&gt;
                     &lt;form [formGroup]&#x3D;&quot;signupForm&quot; #ref&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;ref.valid &amp;&amp; onSubmit()&quot;&gt;
                         &lt;!-- username --&gt;
                         &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
@@ -725,8 +735,7 @@ export class SignupComponent implements OnInit {
                                 &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
                                     &lt;mat-label&gt;Mobile Number&lt;/mat-label&gt;
                                     &lt;input type&#x3D;&quot;number&quot; matInput id&#x3D;&quot;mobile&quot; formControlName&#x3D;&quot;mobile&quot;&gt;
-                                    &lt;mat-error&gt;Please enter a valid Mobile
-                                        Number!&lt;/mat-error&gt;
+                                    &lt;mat-error&gt;Please enter a valid Mobile-No!&lt;/mat-error&gt;
                                 &lt;/mat-form-field&gt;
                             &lt;/div&gt;
                             &lt;!-- E-mail --&gt;
@@ -736,7 +745,7 @@ export class SignupComponent implements OnInit {
                                     &lt;input type&#x3D;&quot;email&quot; matInput id&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot;
                                         placeholder&#x3D;&quot;Ex. abc@example.com&quot;&gt;
                                     &lt;mat-error&gt;Please enter a valid
-                                        Email Address!&lt;/mat-error&gt;
+                                        Email!&lt;/mat-error&gt;
                                 &lt;/mat-form-field&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
@@ -755,12 +764,12 @@ export class SignupComponent implements OnInit {
                             &lt;/mat-error&gt;
                         &lt;/mat-form-field&gt;
                         &lt;!-- submit button --&gt;
-                        &lt;button mat-raised-button type&#x3D;&quot;submit&quot; color&#x3D;&quot;primary&quot;&gt;Signup&lt;/button&gt;
+                        &lt;button mat-raised-button type&#x3D;&quot;submit&quot; class&#x3D;&quot;d-block w-100&quot; color&#x3D;&quot;primary&quot;&gt;Signup&lt;/button&gt;
                     &lt;/form&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/section&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -768,7 +777,50 @@ export class SignupComponent implements OnInit {
                 <p class="comment">
                     <code>./signup.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.sign-up-form {
+    background-image: url(&quot;https://www.jally.de/media/619/1403-wallpaper-bangkok-airport-terminal.JPG&quot;);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-name: fade-out;
+    animation-duration: 1.5s;
+}
+
+.signup-img-container {
+    position: relative;
+
+}
+
+img {
+    filter: blur(1.6px)
+}
+
+.signup-imgText {
+    position: absolute;
+    right: 0%;
+    top: 25%;
+    font-style: italic;
+    text-align: center;
+    font-weight: bolder;
+    color: #fff;
+}
+@media(max-width:1200px) {
+    .signup-img {
+        width: 100%;
+        height: 450px;
+
+    }
+}
+
+
+@keyframes fade-out {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -796,7 +848,7 @@ export class SignupComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid py-5 h-100" style="background-color: grey;">    <div class="container">        <div class="row d-flex align-items-center justify-content-center h-100 px-2 ">            <div class="col-12 col-md-7 col-lg-7 col-xl-7  p-4 rounded ">                <div class="card rounded border-0 p-5">                    <form [formGroup]="signupForm" #ref="ngForm" (ngSubmit)="ref.valid && onSubmit()">                        <!-- username -->                        <mat-form-field appearance="outline">                            <mat-label>Name</mat-label>                            <input type="text" matInput id="username" formControlName="username"                                placeholder="Ex. John Doe">                            <mat-error *ngIf="!username.valid && !username.touched">                                Please enter a                                valid                                username!</mat-error>                        </mat-form-field>                        <div class="row">                            <!-- mobile number -->                            <div class="col">                                <mat-form-field appearance="outline">                                    <mat-label>Mobile Number</mat-label>                                    <input type="number" matInput id="mobile" formControlName="mobile">                                    <mat-error>Please enter a valid Mobile                                        Number!</mat-error>                                </mat-form-field>                            </div>                            <!-- E-mail -->                            <div class="col">                                <mat-form-field appearance="outline">                                    <mat-label>E-mail</mat-label>                                    <input type="email" matInput id="email" formControlName="email"                                        placeholder="Ex. abc@example.com">                                    <mat-error>Please enter a valid                                        Email Address!</mat-error>                                </mat-form-field>                            </div>                        </div>                        <!-- password -->                        <mat-form-field appearance="outline">                            <mat-label>Password</mat-label>                            <input matInput type="password" placeholder="Password" formControlName="password"                                [type]="hide ? \'password\' : \'text\'">                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide"                                [attr.aria-label]="\'Hide password\'" [attr.aria-pressed]="hide">                                <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>                            </button>                            <mat-error *ngIf="password.hasError(\'required\')">Password is required</mat-error>                            <mat-error *ngIf="password.hasError(\'minlength\')">Password must have at least {{minPw}}                                characters                            </mat-error>                        </mat-form-field>                        <!-- submit button -->                        <button mat-raised-button type="submit" color="primary">Signup</button>                    </form>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid d-flex justify-content-center align-items-center sign-up-form h-100">    <section class="container">        <div class=" row row-cols-1 g-0 rounded-4 shadow-lg" style="background-color: beige;">            <div class=" d-none d-md-block col-md-6 rounded-start h-100 order-2">                <div class="h-100 signup-img-container">                    <img src="../../assets/signup-form-img.jpg" class=" signup-img img-fluid rounded-3 ">                    <div class="signup-imgText">                        <p class=" display-4 ">Fly with us</p>                        <p class=" display-6">We\'ll make your Journey Memorably....</p>                    </div>                </div>            </div>            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center h-100 rounded-4 order-1">                <div class=" rounded border-0 p-5">                    <form [formGroup]="signupForm" #ref="ngForm" (ngSubmit)="ref.valid && onSubmit()">                        <!-- username -->                        <mat-form-field appearance="outline">                            <mat-label>Name</mat-label>                            <input type="text" matInput id="username" formControlName="username"                                placeholder="Ex. John Doe">                            <mat-error *ngIf="!username.valid && !username.touched">                                Please enter a                                valid                                username!</mat-error>                        </mat-form-field>                        <div class="row">                            <!-- mobile number -->                            <div class="col">                                <mat-form-field appearance="outline">                                    <mat-label>Mobile Number</mat-label>                                    <input type="number" matInput id="mobile" formControlName="mobile">                                    <mat-error>Please enter a valid Mobile-No!</mat-error>                                </mat-form-field>                            </div>                            <!-- E-mail -->                            <div class="col">                                <mat-form-field appearance="outline">                                    <mat-label>E-mail</mat-label>                                    <input type="email" matInput id="email" formControlName="email"                                        placeholder="Ex. abc@example.com">                                    <mat-error>Please enter a valid                                        Email!</mat-error>                                </mat-form-field>                            </div>                        </div>                        <!-- password -->                        <mat-form-field appearance="outline">                            <mat-label>Password</mat-label>                            <input matInput type="password" placeholder="Password" formControlName="password"                                [type]="hide ? \'password\' : \'text\'">                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide"                                [attr.aria-label]="\'Hide password\'" [attr.aria-pressed]="hide">                                <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>                            </button>                            <mat-error *ngIf="password.hasError(\'required\')">Password is required</mat-error>                            <mat-error *ngIf="password.hasError(\'minlength\')">Password must have at least {{minPw}}                                characters                            </mat-error>                        </mat-form-field>                        <!-- submit button -->                        <button mat-raised-button type="submit" class="d-block w-100" color="primary">Signup</button>                    </form>                </div>            </div>        </div>    </section></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Form1Component', 'selector': 'app-form1'},{'name': 'Form2Component', 'selector': 'app-form2'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ReviewComponent', 'selector': 'app-review'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StepperformComponent', 'selector': 'app-stepperform'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SignupComponent'};

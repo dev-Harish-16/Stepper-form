@@ -1,0 +1,24 @@
+.login-form{
+    background-image: url("../../assets/login-bg.webp");
+    background-size:cover;
+    background-repeat: no-repeat;
+    animation-name: fade-out ;
+    animation-duration: 1.5s;
+}
+@keyframes fade-out {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media(max-width:1200px){
+    .login-form-img{
+        width: 500px !important;
+        height: 400px !important;
+     
+    }
+}
+

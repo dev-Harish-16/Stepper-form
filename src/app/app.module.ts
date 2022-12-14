@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -58,8 +59,9 @@ import { ToastrModule } from 'ngx-toastr';
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
+    MatTabsModule,
     ToastrModule.forRoot({
-      timeOut: 1000,
+      timeOut: 2000,
       progressBar: true,
       progressAnimation: "increasing",
       preventDuplicates: true,

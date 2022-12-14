@@ -20,11 +20,13 @@ export class StepperformComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit() {
+    //open model
     document.getElementById('Modalopen')?.click()
     
   }
 
   ngOnDestroy() {
+    // close model
     document.getElementById('btn-close').click()
 
   }
