@@ -13,7 +13,7 @@ userApp.post("/signup", expressAsyncHandler(async (req, res) => {
     const hashPassword = await bcrypt.hash(userData.password, 10)
     userData.password = hashPassword
     const user = await new User(userData).save()
-    res.send({ message: "User data saved successfully...!", userObj: user  })
+    res.send({ message: "User data saved successfully...!", userObj: user })
 
 }))
 
@@ -24,7 +24,7 @@ userApp.post("/login", expressAsyncHandler(async (req, res) => {
     if (userFromDb) {
         const status = await bcrypt.compare(userData.password, userFromDb.password)
         if (status === true) {
-            const token = jwt.sign({ email: userFromDb.email }, "12345", { expiresIn: "1h" })
+            const token = jwt.sign({ email: userFromDb.email }, process.env.SECRET_KEY, { expiresIn: "1h" })
             res.send({ message: "login Successfull...!", token: token })
         } else {
             res.send({ message: "Password mismatch!!!" })
