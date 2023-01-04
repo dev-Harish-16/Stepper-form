@@ -65,68 +65,48 @@ export class Form2Component implements OnInit, OnDestroy, AfterViewInit {
     console.log(filetypeArray);
     this.fileType = filetypeArray.map(element => element.replace(/\./g, "").trim())
     console.log(this.fileType);
-    
+
   }
 
 
   disableOption(event: { checked: boolean }): void {
-    // **assigning boolean value 
+    // **assigning boolean value for hide input fields based on checkbox status
     this.isDisable = event.checked
-    this.service.checkBoxEvent$.next(this.isDisable)
-    console.log(this.isDisable);
+    // console.log(this.isDisable);
 
-    // **To Disable and Enable Formcontrol
+    // **To Disable,Enable Formcontrol and adding ,removing validations dynamicaly
+    // if checkbox -checked
     if (event.checked === true) {
       for (const key of Object.keys(this.secondFormGroup.controls)) {
         if (key == "confirmationNumber" || key == "ticket") {
           console.log(key);
+          //disable the fields
           this.secondFormGroup.controls[key].reset()
           this.secondFormGroup.controls[key].disable()
-          // this.secondFormGroup.controls[key].clearValidators()
-          // this.secondFormGroup.controls[key].updateValueAndValidity()
         }
-        else {
+        else {// set validations
           if (key == "textArea") {
             this.secondFormGroup.controls[key].setValidators([Validators.required, Validators.maxLength(1500)])
             this.secondFormGroup.controls[key].updateValueAndValidity()
           } else {
             if (key !== "reply") {
               this.secondFormGroup.controls[key].reset()
-              this.secondFormGroup.controls[key].setValidators([Validators.required, Validators.maxLength(1500)])
+              this.secondFormGroup.controls[key].setValidators([Validators.required])
               this.secondFormGroup.controls[key].updateValueAndValidity()
             }
           }
         }
       }
-      // this.secondFormGroup.controls['confirmationNumber'].reset()
-      // this.secondFormGroup.controls['confirmationNumber'].disable()
-      // this.secondFormGroup.controls['ticket'].disable()
-      // this.secondFormGroup.controls['ticket'].reset()
-      // this.secondFormGroup.controls['confirmationNumber'].clearValidators()
-      // this.secondFormGroup.controls['confirmationNumber'].updateValueAndValidity()
-      // this.secondFormGroup.controls['ticket'].clearValidators()
-      // this.secondFormGroup.controls['ticket'].updateValueAndValidity()
-
-      // add validation-if checkbox is checked
-
-      // this.secondFormGroup.controls['flightNumber'].setValidators([Validators.required])
-      // this.secondFormGroup.controls['flightNumber'].updateValueAndValidity()
-      // this.secondFormGroup.controls['flightName'].setValidators([Validators.required])
-      // this.secondFormGroup.controls['flightName'].updateValueAndValidity()
-      // this.secondFormGroup.controls['origin'].setValidators([Validators.required])
-      // this.secondFormGroup.controls['origin'].updateValueAndValidity()
-      // this.secondFormGroup.controls['destination'].setValidators([Validators.required])
-      // this.secondFormGroup.controls['destination'].updateValueAndValidity()
     }
+    // if checkbox -not checked
     if (event.checked === false) {
       for (const key of Object.keys(this.secondFormGroup.controls)) {
         if (key == "confirmationNumber" || key == "ticket") {
+          //enable the fields
           this.secondFormGroup.controls[key].reset()
           this.secondFormGroup.controls[key].enable()
-          // this.secondFormGroup.controls[key].setValidators([Validators.required])
-          // this.secondFormGroup.controls[key].updateValueAndValidity()
         }
-        else {
+        else {//remove validations
           if (key == "textArea") {
             console.log(key);
             this.secondFormGroup.controls[key].setValidators([Validators.required, Validators.maxLength(1500)])
@@ -138,30 +118,10 @@ export class Form2Component implements OnInit, OnDestroy, AfterViewInit {
               this.secondFormGroup.controls[key].clearValidators()
               this.secondFormGroup.controls[key].updateValueAndValidity()
             }
-
           }
-
         }
       }
-
-      // this.secondFormGroup.controls['confirmationNumber'].enable()
-      // this.secondFormGroup.controls['ticket'].enable()
-      // this.secondFormGroup.controls['confirmationNumber'].setValidators([Validators.required])
-      // this.secondFormGroup.controls['confirmationNumber'].updateValueAndValidity()
-      // this.secondFormGroup.controls['ticket'].setValidators([Validators.required])
-      // this.secondFormGroup.controls['ticket'].updateValueAndValidity()
-
-      //remove validations - if checkbox is not checked
-      // this.secondFormGroup.controls['flightNumber'].clearValidators()
-      // this.secondFormGroup.controls['flightNumber'].updateValueAndValidity()
-      // this.secondFormGroup.controls['flightName'].clearValidators()
-      // this.secondFormGroup.controls['flightName'].updateValueAndValidity()
-      // this.secondFormGroup.controls['origin'].clearValidators()
-      // this.secondFormGroup.controls['origin'].updateValueAndValidity()
-      // this.secondFormGroup.controls['destination'].clearValidators()
-      // this.secondFormGroup.controls['destination'].updateValueAndValidity()
     }
-
   }
 
   file(event: any): void {
