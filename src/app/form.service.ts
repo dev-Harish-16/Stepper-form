@@ -39,6 +39,7 @@ export class FormService {
     return this.http.post<any>("http://localhost:5000/user/signup", userData)
 
   }
+  
   login(userData: NgForm) {
     return this.http.post<any>("http://localhost:5000/user/login", userData)
   }
