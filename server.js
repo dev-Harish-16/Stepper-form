@@ -7,6 +7,7 @@ const compression = require("compression")
 const morgan = require("morgan")
 const cors = require("cors")
 const path = require("path")
+require("dotenv").config()
 
 // MiddleWares
 app.use(exp.json())//body-parser
@@ -18,7 +19,8 @@ app.use(morgan('dev'))// logger
 // __dirname ==> returns current directory name
 app.use(exp.static(path.join(__dirname, "./dist/airlinesTravel")))
 
-const dbConnectionUrl = ""
+const dbConnectionUrl = process.env.DB_URL
+
 // connect method in mongoose returns promise
 Mongoose.connect(dbConnectionUrl)
     .then(() => console.log("DataBase Connected SuccessFully...."))
@@ -33,5 +35,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, './dist/airlinesTravel/index.html'))
 })
 
-const port = 5000
-app.listen(port, () => console.log(`Server Listening in ${port}`))
+const port = process.env.PORT || 9000
+app.listen(port, () => console.log(`Server Listening on ${port}`))
+
