@@ -4,6 +4,7 @@ const User = require("../models/userSchema")
 const expressAsyncHandler = require("express-async-handler")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+require("dotenv").config()
 
 // POST-Signup
 userApp.post("/signup", expressAsyncHandler(async (req, res) => {
