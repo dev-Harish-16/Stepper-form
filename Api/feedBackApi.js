@@ -4,6 +4,7 @@ const FeedBack = require("../models/feedBackSchema")
 const expressAsyncHandler = require("express-async-handler")
 const nodemailer = require('nodemailer');
 const multer = require('multer');
+require("dotenv").config()
 
 
 // **nodeMailer configuration
