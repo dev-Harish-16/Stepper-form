@@ -91,15 +91,6 @@ export class ReviewComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.matStepper.reset()
       this.service.fileArray$.next([])
-      // // ** resetting the initial values
-      // this.secondFormGroup.patchValue({
-      //   confirmationNumber: "87879",
-      //   ticket: "9090900",
-      //   flightNumber: 5555,
-      //   flightName: "indigo",
-      //   origin: "chennai",
-      //   destination: "mumbai"
-      // })
       // ** resetting forms by NgForm directive
       this.service.form1Dir$.subscribe(res => this.ngForm1 = res)
       this.service.form2Dir$.subscribe(res => this.ngForm2 = res)
