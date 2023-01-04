@@ -82,7 +82,7 @@ export class Form1Component implements OnInit {
       // console.log("individual country",this.country);
       // console.log(this.country[0]);
 
-      //** getting State /       
+      //** getting State       
       this.states = this.service.getStatesByCountry(this.country[0].isoCode);
       console.log("Total-state ", this.states);
 
@@ -96,8 +96,8 @@ export class Form1Component implements OnInit {
     this.stateControls = this.firstFormGroup.controls['state'];
     this.stateControls.valueChanges.subscribe((stateName: string) => {
       // ** getting state - filtering by state-name
-      this.state = this.states.filter((sateObj) => {
-        return sateObj.name === stateName
+      this.state = this.states.filter((stateObj) => {
+        return stateObj.name === stateName
       })
       // console.log("inidividual state",this.state);
       // console.log(this.state);
@@ -110,11 +110,14 @@ export class Form1Component implements OnInit {
   }
 
   sendFormData(): void {
+    
+    // console.log(this.firstFormGroup);
+    
     // user can proceed once they logged-in
     if (localStorage.getItem("token")) {
       this.service.form1$.next(this.firstFormGroup)
       this.service.form1Dir$.next(this.form1GroupDirective)
-
+      
     } else {
       this.toast.warning("kindly login and proceed")
       this.router.navigateByUrl("/login")
